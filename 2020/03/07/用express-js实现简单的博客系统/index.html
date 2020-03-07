@@ -77,10 +77,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -474,6 +470,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于模版中的外链资源的路径问题"><span class="toc-number">1.</span> <span class="toc-text">关于模版中的外链资源的路径问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#登陆功能实现"><span class="toc-number"></span> <span class="toc-text">登陆功能实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库密码加密"><span class="toc-number">1.</span> <span class="toc-text">数据库密码加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bcrypt"><span class="toc-number">1.1.</span> <span class="toc-text">bcrypt</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#加密"><span class="toc-number">1.1.1.</span> <span class="toc-text">加密</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解密"><span class="toc-number">1.1.2.</span> <span class="toc-text">解密</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-amp-session"><span class="toc-number">2.</span> <span class="toc-text">cookie &amp; session</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#http的无状态性"><span class="toc-number">2.1.</span> <span class="toc-text">http的无状态性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie"><span class="toc-number">2.2.</span> <span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#session"><span class="toc-number">2.3.</span> <span class="toc-text">session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用session和cookie实现登陆功能"><span class="toc-number">2.4.</span> <span class="toc-text">利用session和cookie实现登陆功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#express-session"><span class="toc-number">2.4.1.</span> <span class="toc-text">express-session</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#退出登陆"><span class="toc-number">2.5.</span> <span class="toc-text">退出登陆</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#登陆拦截"><span class="toc-number">3.</span> <span class="toc-text">登陆拦截</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加用户功能"><span class="toc-number"></span> <span class="toc-text">添加用户功能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用Joi模块进行后端字段验证"><span class="toc-number">1.</span> <span class="toc-text">用Joi模块进行后端字段验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误处理"><span class="toc-number">2.</span> <span class="toc-text">错误处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#管理员用户列表页面"><span class="toc-number"></span> <span class="toc-text">管理员用户列表页面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据分页"><span class="toc-number">1.</span> <span class="toc-text">数据分页</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分页功能核心要素"><span class="toc-number">1.1.</span> <span class="toc-text">分页功能核心要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mongodb的查询"><span class="toc-number">1.2.</span> <span class="toc-text">mongodb的查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#修改用户"><span class="toc-number"></span> <span class="toc-text">修改用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#删除用户"><span class="toc-number"></span> <span class="toc-text">删除用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文章管理"><span class="toc-number"></span> <span class="toc-text">文章管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#建立集合Schema"><span class="toc-number">1.</span> <span class="toc-text">建立集合Schema</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多集合联合查询"><span class="toc-number">1.1.</span> <span class="toc-text">多集合联合查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表单中如果有文件-需要以二进制的形式提交"><span class="toc-number">2.</span> <span class="toc-text">表单中如果有文件 需要以二进制的形式提交</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html-from的enctype属性"><span class="toc-number">2.1.</span> <span class="toc-text">html from的enctype属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用formidable模块处理二进制数据"><span class="toc-number">2.2.</span> <span class="toc-text">使用formidable模块处理二进制数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#读取文件FileReader"><span class="toc-number">2.3.</span> <span class="toc-text">读取文件FileReader</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日期格式化-dateformat模块"><span class="toc-number">3.</span> <span class="toc-text">日期格式化 dateformat模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分页"><span class="toc-number">4.</span> <span class="toc-text">分页</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mongoose-sex-page"><span class="toc-number">4.1.</span> <span class="toc-text">mongoose-sex-page</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mongoDB数据库添加账号"><span class="toc-number"></span> <span class="toc-text">mongoDB数据库添加账号</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建超级管理员账号"><span class="toc-number">1.</span> <span class="toc-text">创建超级管理员账号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建普通账户"><span class="toc-number">2.</span> <span class="toc-text">创建普通账户</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开发环境与生产环境"><span class="toc-number"></span> <span class="toc-text">开发环境与生产环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量"><span class="toc-number">1.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#morgan中间件"><span class="toc-number">2.</span> <span class="toc-text">morgan中间件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三方模块config"><span class="toc-number">3.</span> <span class="toc-text">第三方模块config</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用步骤"><span class="toc-number">3.1.</span> <span class="toc-text">使用步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将敏感信息存储到系统环境变量中"><span class="toc-number">3.2.</span> <span class="toc-text">将敏感信息存储到系统环境变量中</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文章评论"><span class="toc-number"></span> <span class="toc-text">文章评论</span></a>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -541,25 +550,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -626,10 +627,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-    	</section>
     
 
     
