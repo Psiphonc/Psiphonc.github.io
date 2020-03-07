@@ -168,17 +168,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="关于模版中的外链资源的路径问题"><a href="#关于模版中的外链资源的路径问题" class="headerlink" title="关于模版中的外链资源的路径问题"></a>关于模版中的外链资源的路径问题</h2><ul>
-<li>模版文件中使用的相对路径是相对于浏览器地址栏的路径<ul>
-<li>例如：localhost/admin/login表示admin目录下的login文件，因此当前路径是admin</li>
-<li>所以在模版文件中要把所有外链资源的路径修改成绝对路径<ul>
-<li>html中/就表示绝对路径</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="登陆功能实现"><a href="#登陆功能实现" class="headerlink" title="登陆功能实现"></a>登陆功能实现</h1><ol>
+        <h1 id="登陆功能实现"><a href="#登陆功能实现" class="headerlink" title="登陆功能实现"></a>登陆功能实现</h1><ol>
 <li>创建用户集合，初始化用户<ol>
 <li>连接数据库</li>
 <li>创建用户集合</li>
@@ -204,6 +194,16 @@
 </ol>
 </li>
 </ol>
+<h2 id="关于模版中的外链资源的路径问题"><a href="#关于模版中的外链资源的路径问题" class="headerlink" title="关于模版中的外链资源的路径问题"></a>关于模版中的外链资源的路径问题</h2><ul>
+<li>模版文件中使用的相对路径是相对于浏览器地址栏的路径<ul>
+<li>例如：localhost/admin/login表示admin目录下的login文件，因此当前路径是admin</li>
+<li>所以在模版文件中要把所有外链资源的路径修改成绝对路径<ul>
+<li>html中/就表示绝对路径</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="数据库密码加密"><a href="#数据库密码加密" class="headerlink" title="数据库密码加密"></a>数据库密码加密</h2><p>哈希加密是单程加密方式<br>在加密的密码中加入随机字符串可以增加密码被破解的难度</p>
 <h3 id="bcrypt"><a href="#bcrypt" class="headerlink" title="bcrypt"></a>bcrypt</h3><h4 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h4>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bcrypt = <span class="built_in">require</span>(<span class="string">"bcrypt"</span>);</span><br><span class="line"><span class="comment">// 随机字符串的长度为10</span></span><br><span class="line"><span class="keyword">let</span> salt = <span class="keyword">await</span> bcrypt.genSalt(<span class="number">10</span>);</span><br><span class="line"><span class="comment">// 使用随机字符串对密码进行加密</span></span><br><span class="line"><span class="keyword">let</span> pass = <span class="keyword">await</span> bcrypt.hash(<span class="string">"明文密码"</span>, salt)</span><br></pre></td></tr></table></figure>
 
@@ -367,7 +367,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">node front-end js mongodb express</a>
         		</li>
       		
 		</ul>
@@ -427,7 +427,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Express框架"><a href="#Express框架" class="headerlink" title="Express框架"></a>Express框架</h1><h2 id="Express框架特性"><a href="#Express框架特性" class="headerlink" title="Express框架特性"></a>Express框架特性</h2><ul>
+        <h2 id="Express框架特性"><a href="#Express框架特性" class="headerlink" title="Express框架特性"></a>Express框架特性</h2><ul>
 <li>提供了<strong>方便简洁的路由定义</strong>方式</li>
 <li>对获取HTTP<strong>请求参数</strong>进行了<strong>简化处理</strong></li>
 <li>对<strong>模版引擎支持程度高</strong>，方便渲染动态HTML页面</li>
@@ -558,7 +558,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">node front-end js express</a>
         		</li>
       		
 		</ul>
@@ -683,7 +683,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color1">node front-end js express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">node front-end js mongodb express</a>
               </li>
             
             <div class="clearfix"></div>
