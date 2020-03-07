@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="//litten.me">
   <title>Ajax基础 | Psiphonc&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="AjaxAjax是浏览器提供的一套方法，可以实现页面无刷新更新数据 应用场景 页面上拉加载数据 列表数据无刷新分页 表单数据项丢失焦点后直接请求服务器验证 搜索框文字提示Ajax的运行环境Ajax需要运行在网站环境中才能生效1234567const express &#x3D; require(&quot;express&quot;);const pathJoin &#x3D; require(&quot;path&quot;).join;const ap">
+  <meta name="description" content="AjaxAjax是浏览器提供的一套方法，可以实现页面无刷新更新数据 应用场景 页面上拉加载数据 列表数据无刷新分页 表单数据项丢失焦点后直接请求服务器验证 搜索框文字提示">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ajax基础">
 <meta property="og:url" content="2020/03/08/Ajax%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Psiphonc&#39;s blog">
-<meta property="og:description" content="AjaxAjax是浏览器提供的一套方法，可以实现页面无刷新更新数据 应用场景 页面上拉加载数据 列表数据无刷新分页 表单数据项丢失焦点后直接请求服务器验证 搜索框文字提示Ajax的运行环境Ajax需要运行在网站环境中才能生效1234567const express &#x3D; require(&quot;express&quot;);const pathJoin &#x3D; require(&quot;path&quot;).join;const ap">
+<meta property="og:description" content="AjaxAjax是浏览器提供的一套方法，可以实现页面无刷新更新数据 应用场景 页面上拉加载数据 列表数据无刷新分页 表单数据项丢失焦点后直接请求服务器验证 搜索框文字提示">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-07T17:20:16.000Z">
-<meta property="article:modified_time" content="2020-03-07T18:45:35.562Z">
+<meta property="article:modified_time" content="2020-03-07T18:47:43.007Z">
 <meta property="article:author" content="psiphonc">
 <meta property="article:tag" content="front-end">
 <meta property="article:tag" content="js">
@@ -187,8 +187,13 @@
 <li>页面上拉加载数据</li>
 <li>列表数据无刷新分页</li>
 <li>表单数据项丢失焦点后直接请求服务器验证</li>
-<li>搜索框文字提示<h2 id="Ajax的运行环境"><a href="#Ajax的运行环境" target="_blank" rel="noopener" class="headerlink" title="Ajax的运行环境"></a>Ajax的运行环境</h2>Ajax需要运行在网站环境中才能生效<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">const</span> pathJoin = <span class="built_in">require</span>(<span class="string">"path"</span>).join;</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(express.static(pathJoin(__dirname, <span class="string">"public"</span>)));</span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"服务器启动成功"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="Ajax的实现"><a href="#Ajax的实现" target="_blank" rel="noopener" class="headerlink" title="Ajax的实现"></a>Ajax的实现</h2></li>
+<li>搜索框文字提示</li>
+</ol>
+<a id="more"></a>
+
+<h2 id="Ajax的运行环境"><a href="#Ajax的运行环境" target="_blank" rel="noopener" class="headerlink" title="Ajax的运行环境"></a>Ajax的运行环境</h2><p>Ajax需要运行在网站环境中才能生效</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">const</span> pathJoin = <span class="built_in">require</span>(<span class="string">"path"</span>).join;</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(express.static(pathJoin(__dirname, <span class="string">"public"</span>)));</span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"服务器启动成功"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Ajax的实现"><a href="#Ajax的实现" target="_blank" rel="noopener" class="headerlink" title="Ajax的实现"></a>Ajax的实现</h2><ol>
 <li>创建Ajax对象<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br></pre></td></tr></table></figure></li>
 <li>告诉Ajax请求地址以及请求方式<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(<span class="string">'get'</span>, <span class="string">"http://example.com"</span>);</span><br></pre></td></tr></table></figure></li>
 <li>发送请求<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.send();</span><br></pre></td></tr></table></figure></li>
