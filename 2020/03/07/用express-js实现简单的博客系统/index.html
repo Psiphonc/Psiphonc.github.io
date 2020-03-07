@@ -5,17 +5,17 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="//litten.me">
   <title>用express.js实现简单的博客系统 | Psiphonc&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="登陆功能实现 创建用户集合，初始化用户 连接数据库 创建用户集合 初始化用户   为登陆表单设置请求地址、求情方式以及表单name属性 当用户点击登陆按钮时候，客户端验证用户是否填写了登陆表单 若其中一项没有输入 就阻止表单提交   服务器端接受请求参数，验证用户是否填写了登陆表单 如果其中一项没有输入，为客户端做出响应，阻止程序向下执行   根据邮箱地址查询用户信息 如果用户不存在，为客户端作出">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用express.js实现简单的博客系统">
-<meta property="og:url" content="http://yoursite.com/2020/03/07/%E7%94%A8express-js%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:url" content="2020/03/07/%E7%94%A8express-js%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="Psiphonc&#39;s blog">
 <meta property="og:description" content="登陆功能实现 创建用户集合，初始化用户 连接数据库 创建用户集合 初始化用户   为登陆表单设置请求地址、求情方式以及表单name属性 当用户点击登陆按钮时候，客户端验证用户是否填写了登陆表单 若其中一项没有输入 就阻止表单提交   服务器端接受请求参数，验证用户是否填写了登陆表单 如果其中一项没有输入，为客户端做出响应，阻止程序向下执行   根据邮箱地址查询用户信息 如果用户不存在，为客户端作出">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/assets/img/session&cookie.jpg">
+<meta property="og:image" content="/assets/img/session&cookie.jpg">
 <meta property="article:published_time" content="2020-03-07T12:35:40.000Z">
 <meta property="article:modified_time" content="2020-03-07T17:19:15.670Z">
 <meta property="article:author" content="psiphonc">
@@ -25,7 +25,7 @@
 <meta property="article:tag" content="mongodb">
 <meta property="article:tag" content="project">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/assets/img/session&cookie.jpg">
+<meta name="twitter:image" content="/assets/img/session&cookie.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Psiphonc&#39;s blog" type="application/atom+xml">
   
@@ -53,11 +53,11 @@
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="/" class="profilepic">
+		<a href="/" target="_blank" rel="noopener" class="profilepic">
 			<img src="/assets/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">psiphonc</a></h1>
+		  <h1 class="header-author"><a href="/" target="_blank" rel="noopener">psiphonc</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">冲冲冲</p>
@@ -66,11 +66,11 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="/" target="_blank" rel="noopener">主页</a></li>
 	        
-				<li><a href="/tags/front-end">前端</a></li>
+				<li><a href="/tags/front-end" target="_blank" rel="noopener">前端</a></li>
 	        
-				<li><a href="/tags/node">node</a></li>
+				<li><a href="/tags/node" target="_blank" rel="noopener">node</a></li>
 	        
 			</ul>
 		</nav>
@@ -146,11 +146,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/" target="_blank" rel="noopener">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/front-end">前端</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/front-end" target="_blank" rel="noopener">前端</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/node">node</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/node" target="_blank" rel="noopener">node</a></li>
 		        
 				</ul>
 			</nav>
@@ -177,7 +177,7 @@
   
 
         
-        <a href="/2020/03/07/%E7%94%A8express-js%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
+        <a href="2020/03/07/用express-js实现简单的博客系统/" target="_blank" rel="noopener" class="archive-article-date">
   	<time datetime="2020-03-07T12:35:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-07</time>
 </a>
         
@@ -185,7 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="登陆功能实现"><a href="#登陆功能实现" class="headerlink" title="登陆功能实现"></a>登陆功能实现</h1><ol>
+        <h1 id="登陆功能实现"><a href="#登陆功能实现" target="_blank" rel="noopener" class="headerlink" title="登陆功能实现"></a>登陆功能实现</h1><ol>
 <li>创建用户集合，初始化用户<ol>
 <li>连接数据库</li>
 <li>创建用户集合</li>
@@ -211,7 +211,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="关于模版中的外链资源的路径问题"><a href="#关于模版中的外链资源的路径问题" class="headerlink" title="关于模版中的外链资源的路径问题"></a>关于模版中的外链资源的路径问题</h2><ul>
+<h2 id="关于模版中的外链资源的路径问题"><a href="#关于模版中的外链资源的路径问题" target="_blank" rel="noopener" class="headerlink" title="关于模版中的外链资源的路径问题"></a>关于模版中的外链资源的路径问题</h2><ul>
 <li>模版文件中使用的相对路径是相对于浏览器地址栏的路径<ul>
 <li>例如：localhost/admin/login表示admin目录下的login文件，因此当前路径是admin</li>
 <li>所以在模版文件中要把所有外链资源的路径修改成绝对路径<ul>
@@ -221,26 +221,26 @@
 </ul>
 </li>
 </ul>
-<h2 id="数据库密码加密"><a href="#数据库密码加密" class="headerlink" title="数据库密码加密"></a>数据库密码加密</h2><p>哈希加密是单程加密方式<br>在加密的密码中加入随机字符串可以增加密码被破解的难度</p>
-<h3 id="bcrypt"><a href="#bcrypt" class="headerlink" title="bcrypt"></a>bcrypt</h3><h4 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h4>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bcrypt = <span class="built_in">require</span>(<span class="string">"bcrypt"</span>);</span><br><span class="line"><span class="comment">// 随机字符串的长度为10</span></span><br><span class="line"><span class="keyword">let</span> salt = <span class="keyword">await</span> bcrypt.genSalt(<span class="number">10</span>);</span><br><span class="line"><span class="comment">// 使用随机字符串对密码进行加密</span></span><br><span class="line"><span class="keyword">let</span> pass = <span class="keyword">await</span> bcrypt.hash(<span class="string">"明文密码"</span>, salt)</span><br></pre></td></tr></table></figure>
+<h2 id="数据库密码加密"><a href="#数据库密码加密" target="_blank" rel="noopener" class="headerlink" title="数据库密码加密"></a>数据库密码加密</h2><p>哈希加密是单程加密方式<br>在加密的密码中加入随机字符串可以增加密码被破解的难度</p>
+<h3 id="bcrypt"><a href="#bcrypt" target="_blank" rel="noopener" class="headerlink" title="bcrypt"></a>bcrypt</h3><h4 id="加密"><a href="#加密" target="_blank" rel="noopener" class="headerlink" title="加密"></a>加密</h4>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bcrypt = <span class="built_in">require</span>(<span class="string">"bcrypt"</span>);</span><br><span class="line"><span class="comment">// 随机字符串的长度为10</span></span><br><span class="line"><span class="keyword">let</span> salt = <span class="keyword">await</span> bcrypt.genSalt(<span class="number">10</span>);</span><br><span class="line"><span class="comment">// 使用随机字符串对密码进行加密</span></span><br><span class="line"><span class="keyword">let</span> pass = <span class="keyword">await</span> bcrypt.hash(<span class="string">"明文密码"</span>, salt)</span><br></pre></td></tr></table></figure>
 
-<h4 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h4>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> isEqual = <span class="keyword">await</span> bcrypt.compare(<span class="string">"明文密码"</span>, <span class="string">"加密密码"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="解密"><a href="#解密" target="_blank" rel="noopener" class="headerlink" title="解密"></a>解密</h4>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> isEqual = <span class="keyword">await</span> bcrypt.compare(<span class="string">"明文密码"</span>, <span class="string">"加密密码"</span>);</span><br></pre></td></tr></table></figure>
 
 
-<h2 id="cookie-amp-session"><a href="#cookie-amp-session" class="headerlink" title="cookie &amp; session"></a>cookie &amp; session</h2><h3 id="http的无状态性"><a href="#http的无状态性" class="headerlink" title="http的无状态性"></a>http的无状态性</h3><p>在完成一次客户端与服务端的连接后，他们之间就断开了，没有联系了<br>所以在成功登陆后即使把username存到req对象中，也无法显示用户名</p>
-<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>cookie实际上是浏览器在硬盘中开辟的一块空间以供服务器存储数据</p>
+<h2 id="cookie-amp-session"><a href="#cookie-amp-session" target="_blank" rel="noopener" class="headerlink" title="cookie &amp; session"></a>cookie &amp; session</h2><h3 id="http的无状态性"><a href="#http的无状态性" target="_blank" rel="noopener" class="headerlink" title="http的无状态性"></a>http的无状态性</h3><p>在完成一次客户端与服务端的连接后，他们之间就断开了，没有联系了<br>所以在成功登陆后即使把username存到req对象中，也无法显示用户名</p>
+<h3 id="cookie"><a href="#cookie" target="_blank" rel="noopener" class="headerlink" title="cookie"></a>cookie</h3><p>cookie实际上是浏览器在硬盘中开辟的一块空间以供服务器存储数据</p>
 <ul>
 <li>cookie中的数据是以域名的形式进行区分的</li>
 <li>cookie中的数据是有过期时间的</li>
 <li>cookie中的数据会随着请求被自动发送到服务器</li>
 </ul>
-<h3 id="session"><a href="#session" class="headerlink" title="session"></a>session</h3><p>session是一个对象，存储在服务器的内存中，在session对象中也可以存储多条数据，每一条数据都有一个sessionid作为唯一标识</p>
-<h3 id="利用session和cookie实现登陆功能"><a href="#利用session和cookie实现登陆功能" class="headerlink" title="利用session和cookie实现登陆功能"></a>利用session和cookie实现登陆功能</h3><p><img src="/assets/img/session&cookie.jpg" alt="img"></p>
-<h4 id="express-session"><a href="#express-session" class="headerlink" title="express-session"></a>express-session</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> session = <span class="built_in">require</span>(<span class="string">"express-session"</span>);</span><br><span class="line">app.use(session(&#123;<span class="attr">secret</span>: <span class="string">"secret key"</span>&#125;));</span><br></pre></td></tr></table></figure>
+<h3 id="session"><a href="#session" target="_blank" rel="noopener" class="headerlink" title="session"></a>session</h3><p>session是一个对象，存储在服务器的内存中，在session对象中也可以存储多条数据，每一条数据都有一个sessionid作为唯一标识</p>
+<h3 id="利用session和cookie实现登陆功能"><a href="#利用session和cookie实现登陆功能" target="_blank" rel="noopener" class="headerlink" title="利用session和cookie实现登陆功能"></a>利用session和cookie实现登陆功能</h3><p><img src="/assets/img/session&cookie.jpg" alt="img"></p>
+<h4 id="express-session"><a href="#express-session" target="_blank" rel="noopener" class="headerlink" title="express-session"></a>express-session</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> session = <span class="built_in">require</span>(<span class="string">"express-session"</span>);</span><br><span class="line">app.use(session(&#123;<span class="attr">secret</span>: <span class="string">"secret key"</span>&#125;));</span><br></pre></td></tr></table></figure>
 
-<h3 id="退出登陆"><a href="#退出登陆" class="headerlink" title="退出登陆"></a>退出登陆</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    req.session.destroy(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        res.clearCookie(<span class="string">"connect.sid"</span>);</span><br><span class="line">        res.redirect(<span class="string">"/admin/login"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="退出登陆"><a href="#退出登陆" target="_blank" rel="noopener" class="headerlink" title="退出登陆"></a>退出登陆</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    req.session.destroy(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        res.clearCookie(<span class="string">"connect.sid"</span>);</span><br><span class="line">        res.redirect(<span class="string">"/admin/login"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="登陆拦截"><a href="#登陆拦截" class="headerlink" title="登陆拦截"></a>登陆拦截</h2><p>在没有登陆成功的状态下需要拦截访问管理页面的请求</p>
+<h2 id="登陆拦截"><a href="#登陆拦截" target="_blank" rel="noopener" class="headerlink" title="登陆拦截"></a>登陆拦截</h2><p>在没有登陆成功的状态下需要拦截访问管理页面的请求</p>
 <ol>
 <li>在路由前，使用use中间件拦截访问以/admin开头的请求</li>
 <li>判断当前登陆状态<ol>
@@ -249,7 +249,7 @@
 </ol>
 </li>
 </ol>
-<h1 id="添加用户功能"><a href="#添加用户功能" class="headerlink" title="添加用户功能"></a>添加用户功能</h1><ol>
+<h1 id="添加用户功能"><a href="#添加用户功能" target="_blank" rel="noopener" class="headerlink" title="添加用户功能"></a>添加用户功能</h1><ol>
 <li>为用户列表页面的新增用户按钮添加链接</li>
 <li>添加一个链接对应的路由，在路由处理函数中渲染新增用户模版</li>
 <li>为新增用户表单指定请求地址、请求方式、为表单项添加name属性</li>
@@ -261,19 +261,19 @@
 <li>将用户信息添加到数据库中</li>
 <li>重定向页面到用户列表页面</li>
 </ol>
-<h2 id="用Joi模块进行后端字段验证"><a href="#用Joi模块进行后端字段验证" class="headerlink" title="用Joi模块进行后端字段验证"></a>用Joi模块进行后端字段验证</h2><p>javascript对象的规则描述语言和验证器</p>
+<h2 id="用Joi模块进行后端字段验证"><a href="#用Joi模块进行后端字段验证" target="_blank" rel="noopener" class="headerlink" title="用Joi模块进行后端字段验证"></a>用Joi模块进行后端字段验证</h2><p>javascript对象的规则描述语言和验证器</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Joi = <span class="built_in">require</span>(<span class="string">"joi"</span>);</span><br><span class="line"><span class="keyword">const</span> schema = &#123;</span><br><span class="line">    username: Joi.string().alpahnum().min(<span class="number">3</span>).max(<span class="number">30</span>).required().error(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"信息错误"</span>));</span><br><span class="line">    password: Joi.string().regex(<span class="regexp">/^[a-zA-Z0-9]&#123;3,30&#125;$/</span>),</span><br><span class="line">    access_token: [Joi.string(), Joi.number()],</span><br><span class="line">    birthyear: Joi.number().integer().min(<span class="number">1900</span>).max(<span class="number">2013</span>),</span><br><span class="line">    email:Joi.string().email()</span><br><span class="line">&#125;;</span><br><span class="line">Joi.validate(&#123;<span class="attr">username</span>:<span class="string">"abcd"</span>, <span class="attr">birthyear</span>: <span class="number">1994</span>&#125;, schema).</span><br><span class="line">    then(<span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">        result.dosomething();</span><br><span class="line">    &#125;).</span><br><span class="line">    <span class="keyword">catch</span>(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
 
-<h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><ul>
+<h2 id="错误处理"><a href="#错误处理" target="_blank" rel="noopener" class="headerlink" title="错误处理"></a>错误处理</h2><ul>
 <li>next只能接收一个字符串参数</li>
 <li>所以需要使用JSON.stringify()将对象转换成一个字符串</li>
 <li>再使用JSON.parse()把字符串转换成对象</li>
 </ul>
-<h1 id="管理员用户列表页面"><a href="#管理员用户列表页面" class="headerlink" title="管理员用户列表页面"></a>管理员用户列表页面</h1><ol>
+<h1 id="管理员用户列表页面"><a href="#管理员用户列表页面" target="_blank" rel="noopener" class="headerlink" title="管理员用户列表页面"></a>管理员用户列表页面</h1><ol>
 <li>数据库中查询所有用户</li>
 <li>模版渲染</li>
 </ol>
-<h2 id="数据分页"><a href="#数据分页" class="headerlink" title="数据分页"></a>数据分页</h2><h3 id="分页功能核心要素"><a href="#分页功能核心要素" class="headerlink" title="分页功能核心要素"></a>分页功能核心要素</h3><ul>
+<h2 id="数据分页"><a href="#数据分页" target="_blank" rel="noopener" class="headerlink" title="数据分页"></a>数据分页</h2><h3 id="分页功能核心要素"><a href="#分页功能核心要素" target="_blank" rel="noopener" class="headerlink" title="分页功能核心要素"></a>分页功能核心要素</h3><ul>
 <li>当前页：用户通过点击上一页、下一页和页码产生，客户端通过get参数方式传递到服务器端</li>
 <li>总页数：根据总页数判断当前页是否为最后一页，根据判断结果作出响应<ul>
 <li>总页数 = Math.ceil(总数据条数 / 每页显示数据条数) </li>
@@ -283,7 +283,7 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User.countDocuments(&#123;&#125;);</span><br></pre></td></tr></table></figure>
 
-<h3 id="mongodb的查询"><a href="#mongodb的查询" class="headerlink" title="mongodb的查询"></a>mongodb的查询</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">limit(<span class="number">2</span>) <span class="comment">// 限制查询的数量 传入每页显示的数据量</span></span><br><span class="line">skip(<span class="number">1</span>) <span class="comment">// 跳过几条数据 传入显示数据的开始位置</span></span><br></pre></td></tr></table></figure>
+<h3 id="mongodb的查询"><a href="#mongodb的查询" target="_blank" rel="noopener" class="headerlink" title="mongodb的查询"></a>mongodb的查询</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">limit(<span class="number">2</span>) <span class="comment">// 限制查询的数量 传入每页显示的数据量</span></span><br><span class="line">skip(<span class="number">1</span>) <span class="comment">// 跳过几条数据 传入显示数据的开始位置</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>数据的开始查询位置 = (当前页 - 1) * 每页显示的数据</li>
@@ -294,7 +294,7 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 分页 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pagination"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">style</span>=<span class="string">"display:&lt;%= page-1 &gt; 0 ? "</span><span class="attr">inline</span>" <span class="attr">:</span> "<span class="attr">none</span>" %&gt;</span>"&gt;</span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/admin/user?page=&#123;&#123;(page-1) &lt; 0 ? 0 : (page-1)&#125;&#125;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="symbol">&amp;laquo;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    &lt;% for (var i = 1; i &lt;= total; ++i) &#123; %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/admin/user?page=&#123;&#123;i&#125;&#125;"</span>&gt;</span>&#123;&#123;i&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">style</span>=<span class="string">"display:&lt;%= page-0+1 &gt; total ? "</span><span class="attr">none</span>" <span class="attr">:</span> "<span class="attr">inline</span>" %&gt;</span>"&gt;</span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/admin/user?page=&#123;&#123;(page-0+1)&gt;total ? total : (page-0+1)&#125;&#125;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="symbol">&amp;raquo;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- /分页 --&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="修改用户"><a href="#修改用户" class="headerlink" title="修改用户"></a>修改用户</h1><ol>
+<h1 id="修改用户"><a href="#修改用户" target="_blank" rel="noopener" class="headerlink" title="修改用户"></a>修改用户</h1><ol>
 <li>将要修改的用户ID传递到服务器</li>
 <li>建立用户信息修改功能对应的路由</li>
 <li>接收客户端表单传递过来的请求参数</li>
@@ -302,7 +302,7 @@
 <li>密码比对失败对客户端作出响应</li>
 <li>密码比对成功将用户信息更新到数据库</li>
 </ol>
-<h1 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h1><ol>
+<h1 id="删除用户"><a href="#删除用户" target="_blank" rel="noopener" class="headerlink" title="删除用户"></a>删除用户</h1><ol>
 <li>在确认删除框中添加隐藏域以存储要删除用户的ID</li>
 <li>为删除按钮添加自定义属性以存储要删除的用户ID</li>
 <li>为删除按钮添加点击事件，在事件处理函数中获取自定义属性中存储的ID并将ID存储在表单的隐藏域中</li>
@@ -310,21 +310,21 @@
 <li>在服务器端建立删除功能路由</li>
 <li>接收客户端传递过来的id参数</li>
 </ol>
-<h1 id="文章管理"><a href="#文章管理" class="headerlink" title="文章管理"></a>文章管理</h1><h2 id="建立集合Schema"><a href="#建立集合Schema" class="headerlink" title="建立集合Schema"></a>建立集合Schema</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">author: &#123;</span><br><span class="line">    type: mongoose.Schema.Types.ObjectId,</span><br><span class="line">    ref: <span class="string">"User"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="文章管理"><a href="#文章管理" target="_blank" rel="noopener" class="headerlink" title="文章管理"></a>文章管理</h1><h2 id="建立集合Schema"><a href="#建立集合Schema" target="_blank" rel="noopener" class="headerlink" title="建立集合Schema"></a>建立集合Schema</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">author: &#123;</span><br><span class="line">    type: mongoose.Schema.Types.ObjectId,</span><br><span class="line">    ref: <span class="string">"User"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="多集合联合查询"><a href="#多集合联合查询" class="headerlink" title="多集合联合查询"></a>多集合联合查询</h3><p>let articles = await Article.find({}).populate(“author”);<br>populate(“字段”)，顺着该字段的ref属性去多集合联查</p>
-<h2 id="表单中如果有文件-需要以二进制的形式提交"><a href="#表单中如果有文件-需要以二进制的形式提交" class="headerlink" title="表单中如果有文件 需要以二进制的形式提交"></a>表单中如果有文件 需要以二进制的形式提交</h2><h3 id="html-from的enctype属性"><a href="#html-from的enctype属性" class="headerlink" title="html from的enctype属性"></a>html from的enctype属性</h3><pre><code>- 默认值 application/x-www-form-urlencoded
+<h3 id="多集合联合查询"><a href="#多集合联合查询" target="_blank" rel="noopener" class="headerlink" title="多集合联合查询"></a>多集合联合查询</h3><p>let articles = await Article.find({}).populate(“author”);<br>populate(“字段”)，顺着该字段的ref属性去多集合联查</p>
+<h2 id="表单中如果有文件-需要以二进制的形式提交"><a href="#表单中如果有文件-需要以二进制的形式提交" target="_blank" rel="noopener" class="headerlink" title="表单中如果有文件 需要以二进制的形式提交"></a>表单中如果有文件 需要以二进制的形式提交</h2><h3 id="html-from的enctype属性"><a href="#html-from的enctype属性" target="_blank" rel="noopener" class="headerlink" title="html from的enctype属性"></a>html from的enctype属性</h3><pre><code>- 默认值 application/x-www-form-urlencoded
   - name=Tom&amp;age=20
-- multipart/form-data 将表单数据编码成二进制类型</code></pre><h3 id="使用formidable模块处理二进制数据"><a href="#使用formidable模块处理二进制数据" class="headerlink" title="使用formidable模块处理二进制数据"></a>使用formidable模块处理二进制数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> formidable = <span class="built_in">require</span>(<span class="string">"formidable"</span>);</span><br><span class="line"><span class="comment">// 创建表单解析对象</span></span><br><span class="line"><span class="keyword">const</span> form = <span class="keyword">new</span> formidable.IncomingForm();</span><br><span class="line"><span class="comment">// 设置文件上传路径</span></span><br><span class="line">form.uploadDir = <span class="string">"/file/uoload/dir"</span>;</span><br><span class="line"><span class="comment">// 保留文件后缀名</span></span><br><span class="line">form.keepExtensions = <span class="literal">true</span>;</span><br><span class="line"><span class="comment">// 解析表单</span></span><br><span class="line">form.parse(req, (err, fields, files) =&gt; &#123;</span><br><span class="line">    <span class="comment">//fields: 存储普通请求参数</span></span><br><span class="line">    <span class="comment">// files: 存储上传的文件信息</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+- multipart/form-data 将表单数据编码成二进制类型</code></pre><h3 id="使用formidable模块处理二进制数据"><a href="#使用formidable模块处理二进制数据" target="_blank" rel="noopener" class="headerlink" title="使用formidable模块处理二进制数据"></a>使用formidable模块处理二进制数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> formidable = <span class="built_in">require</span>(<span class="string">"formidable"</span>);</span><br><span class="line"><span class="comment">// 创建表单解析对象</span></span><br><span class="line"><span class="keyword">const</span> form = <span class="keyword">new</span> formidable.IncomingForm();</span><br><span class="line"><span class="comment">// 设置文件上传路径</span></span><br><span class="line">form.uploadDir = <span class="string">"/file/uoload/dir"</span>;</span><br><span class="line"><span class="comment">// 保留文件后缀名</span></span><br><span class="line">form.keepExtensions = <span class="literal">true</span>;</span><br><span class="line"><span class="comment">// 解析表单</span></span><br><span class="line">form.parse(req, (err, fields, files) =&gt; &#123;</span><br><span class="line">    <span class="comment">//fields: 存储普通请求参数</span></span><br><span class="line">    <span class="comment">// files: 存储上传的文件信息</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<h3 id="读取文件FileReader"><a href="#读取文件FileReader" class="headerlink" title="读取文件FileReader"></a>读取文件FileReader</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">reader.readAsDataURL(<span class="string">"文件"</span>);</span><br><span class="line">reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(reader.result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="读取文件FileReader"><a href="#读取文件FileReader" target="_blank" rel="noopener" class="headerlink" title="读取文件FileReader"></a>读取文件FileReader</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">reader.readAsDataURL(<span class="string">"文件"</span>);</span><br><span class="line">reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(reader.result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这个对象实际上就是把文件编码成dataurl，直接填写在src属性里</p>
-<h2 id="日期格式化-dateformat模块"><a href="#日期格式化-dateformat模块" class="headerlink" title="日期格式化 dateformat模块"></a>日期格式化 dateformat模块</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dateformat = <span class="built_in">require</span>(<span class="string">"dateformat"</span>);</span><br><span class="line"><span class="keyword">const</span> tempalate = <span class="built_in">require</span>(<span class="string">"art-template"</span>);</span><br><span class="line">tempalate.defaults.imports.dateformat = dateformat;</span><br></pre></td></tr></table></figure>
+<h2 id="日期格式化-dateformat模块"><a href="#日期格式化-dateformat模块" target="_blank" rel="noopener" class="headerlink" title="日期格式化 dateformat模块"></a>日期格式化 dateformat模块</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dateformat = <span class="built_in">require</span>(<span class="string">"dateformat"</span>);</span><br><span class="line"><span class="keyword">const</span> tempalate = <span class="built_in">require</span>(<span class="string">"art-template"</span>);</span><br><span class="line">tempalate.defaults.imports.dateformat = dateformat;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;dateformat($value.publishDate, "yyyy-mm-dd")&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><h3 id="mongoose-sex-page"><a href="#mongoose-sex-page" class="headerlink" title="mongoose-sex-page"></a>mongoose-sex-page</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pagination = <span class="built_in">require</span>(<span class="string">"mongoose-sex-page"</span>);</span><br><span class="line">pagination(集合的构造函数).page(<span class="number">1</span>).size(<span class="number">20</span>).display(<span class="number">8</span>).exec();</span><br></pre></td></tr></table></figure>
+<h2 id="分页"><a href="#分页" target="_blank" rel="noopener" class="headerlink" title="分页"></a>分页</h2><h3 id="mongoose-sex-page"><a href="#mongoose-sex-page" target="_blank" rel="noopener" class="headerlink" title="mongoose-sex-page"></a>mongoose-sex-page</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pagination = <span class="built_in">require</span>(<span class="string">"mongoose-sex-page"</span>);</span><br><span class="line">pagination(集合的构造函数).page(<span class="number">1</span>).size(<span class="number">20</span>).display(<span class="number">8</span>).exec();</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>page：当前页</li>
@@ -333,36 +333,36 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查询返回结果</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"page"</span>: <span class="number">1</span>, <span class="comment">// 当前页</span></span><br><span class="line">    <span class="string">"size"</span>: <span class="number">2</span>, <span class="comment">// 每页显示的数据条数</span></span><br><span class="line">    <span class="string">"total"</span>: <span class="number">8</span>, <span class="comment">// 总共的数据条数</span></span><br><span class="line">    <span class="string">"records"</span>: [</span><br><span class="line">        <span class="comment">// 查询结果数组</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"_id"</span>: <span class="string">"blablabla"</span>,</span><br><span class="line">            <span class="string">"title"</span>: <span class="string">"blabla"</span>,</span><br><span class="line">            ...</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;,</span><br><span class="line">        ...</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"pages"</span>: <span class="number">4</span>, <span class="comment">// 总页数</span></span><br><span class="line">    <span class="string">"display"</span>: [<span class="number">1</span> , <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] <span class="comment">// 客户端此时要显示的页码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="mongoDB数据库添加账号"><a href="#mongoDB数据库添加账号" class="headerlink" title="mongoDB数据库添加账号"></a>mongoDB数据库添加账号</h1><h2 id="创建超级管理员账号"><a href="#创建超级管理员账号" class="headerlink" title="创建超级管理员账号"></a>创建超级管理员账号</h2><ol>
+<h1 id="mongoDB数据库添加账号"><a href="#mongoDB数据库添加账号" target="_blank" rel="noopener" class="headerlink" title="mongoDB数据库添加账号"></a>mongoDB数据库添加账号</h1><h2 id="创建超级管理员账号"><a href="#创建超级管理员账号" target="_blank" rel="noopener" class="headerlink" title="创建超级管理员账号"></a>创建超级管理员账号</h2><ol>
 <li>切换到admin数据库 use admin</li>
 <li>创建超级管理员账户 db.createUser()</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.createUser(&#123;user:&#39;root&#39;,pwd:&#39;root&#39;,roles:[&#39;root&#39;]&#125;)</span><br></pre></td></tr></table></figure>
 
-<h2 id="创建普通账户"><a href="#创建普通账户" class="headerlink" title="创建普通账户"></a>创建普通账户</h2><ol>
+<h2 id="创建普通账户"><a href="#创建普通账户" target="_blank" rel="noopener" class="headerlink" title="创建普通账户"></a>创建普通账户</h2><ol>
 <li>切换到其他数据库 use somedb</li>
 <li>db.createUser()</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.createUser(&#123;user:&#39;psiphonc&#39;,pwd:&#39;abcd1234&#39;,roles:[&#39;readWrite&#39;]&#125;)</span><br></pre></td></tr></table></figure>
 
-<h1 id="开发环境与生产环境"><a href="#开发环境与生产环境" class="headerlink" title="开发环境与生产环境"></a>开发环境与生产环境</h1><h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>通过环境变量NODE_ENV的值来判断当前是生产环境还是开发环境</p>
+<h1 id="开发环境与生产环境"><a href="#开发环境与生产环境" target="_blank" rel="noopener" class="headerlink" title="开发环境与生产环境"></a>开发环境与生产环境</h1><h2 id="环境变量"><a href="#环境变量" target="_blank" rel="noopener" class="headerlink" title="环境变量"></a>环境变量</h2><p>通过环境变量NODE_ENV的值来判断当前是生产环境还是开发环境</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (process.env.NODE_ENV == <span class="string">"development"</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(”开发环境”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="morgan中间件"><a href="#morgan中间件" class="headerlink" title="morgan中间件"></a>morgan中间件</h2><p>在开发环境使用morgan中间件可以将每次服务器访问自动打印到控制台上</p>
+<h2 id="morgan中间件"><a href="#morgan中间件" target="_blank" rel="noopener" class="headerlink" title="morgan中间件"></a>morgan中间件</h2><p>在开发环境使用morgan中间件可以将每次服务器访问自动打印到控制台上</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> morgan = <span class="built_in">require</span>(<span class="string">"morgan"</span>);</span><br><span class="line"><span class="keyword">if</span>(process.env.NODE_ENV == <span class="string">"development"</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"开发环境"</span>);</span><br><span class="line">    app.use(morgan(<span class="string">"dev"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="第三方模块config"><a href="#第三方模块config" class="headerlink" title="第三方模块config"></a>第三方模块config</h2><p>允许开发人员将不同运行环境下的配置信息抽离到配置文件，将运行环境的判断和设置托管给模块</p>
-<h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
+<h2 id="第三方模块config"><a href="#第三方模块config" target="_blank" rel="noopener" class="headerlink" title="第三方模块config"></a>第三方模块config</h2><p>允许开发人员将不同运行环境下的配置信息抽离到配置文件，将运行环境的判断和设置托管给模块</p>
+<h3 id="使用步骤"><a href="#使用步骤" target="_blank" rel="noopener" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
 <li>使用npm install config命令下载模块</li>
 <li>在项目根目录下新建config文件夹</li>
 <li>在config文件夹下创建default.json、development.json、production.json</li>
 <li>导入模块，使用模块内部提供的get方法获取配置信息</li>
 </ol>
-<h3 id="将敏感信息存储到系统环境变量中"><a href="#将敏感信息存储到系统环境变量中" class="headerlink" title="将敏感信息存储到系统环境变量中"></a>将敏感信息存储到系统环境变量中</h3><ol>
+<h3 id="将敏感信息存储到系统环境变量中"><a href="#将敏感信息存储到系统环境变量中" target="_blank" rel="noopener" class="headerlink" title="将敏感信息存储到系统环境变量中"></a>将敏感信息存储到系统环境变量中</h3><ol>
 <li>在config文件夹下建立custom-enviroment-variables.json</li>
 <li>配置项属性的值填写系统环境变量的名字</li>
 </ol>
-<h1 id="文章评论"><a href="#文章评论" class="headerlink" title="文章评论"></a>文章评论</h1><ol>
+<h1 id="文章评论"><a href="#文章评论" target="_blank" rel="noopener" class="headerlink" title="文章评论"></a>文章评论</h1><ol>
 <li>创建评论集合</li>
 <li>判断用户是否登陆</li>
 <li>在服务器创建评论功能的路由</li>
@@ -456,7 +456,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/07/%E7%94%A8express-js%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:2020/03/07/用express-js实现简单的博客系统/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -470,7 +470,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/08/Ajax%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="2020/03/08/Ajax基础/" target="_blank" rel="noopener" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -480,7 +480,7 @@
     </a>
   
   
-    <a href="/2020/03/07/express-js%E6%A1%86%E6%9E%B6/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="2020/03/07/express-js框架/" target="_blank" rel="noopener" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">express.js框架</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -508,7 +508,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#登陆功能实现"><span class="toc-number">1.</span> <span class="toc-text">登陆功能实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于模版中的外链资源的路径问题"><span class="toc-number">1.1.</span> <span class="toc-text">关于模版中的外链资源的路径问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库密码加密"><span class="toc-number">1.2.</span> <span class="toc-text">数据库密码加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bcrypt"><span class="toc-number">1.2.1.</span> <span class="toc-text">bcrypt</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#加密"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">加密</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解密"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">解密</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-amp-session"><span class="toc-number">1.3.</span> <span class="toc-text">cookie &amp; session</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#http的无状态性"><span class="toc-number">1.3.1.</span> <span class="toc-text">http的无状态性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie"><span class="toc-number">1.3.2.</span> <span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#session"><span class="toc-number">1.3.3.</span> <span class="toc-text">session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用session和cookie实现登陆功能"><span class="toc-number">1.3.4.</span> <span class="toc-text">利用session和cookie实现登陆功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#express-session"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">express-session</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#退出登陆"><span class="toc-number">1.3.5.</span> <span class="toc-text">退出登陆</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#登陆拦截"><span class="toc-number">1.4.</span> <span class="toc-text">登陆拦截</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加用户功能"><span class="toc-number">2.</span> <span class="toc-text">添加用户功能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用Joi模块进行后端字段验证"><span class="toc-number">2.1.</span> <span class="toc-text">用Joi模块进行后端字段验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误处理"><span class="toc-number">2.2.</span> <span class="toc-text">错误处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#管理员用户列表页面"><span class="toc-number">3.</span> <span class="toc-text">管理员用户列表页面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据分页"><span class="toc-number">3.1.</span> <span class="toc-text">数据分页</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分页功能核心要素"><span class="toc-number">3.1.1.</span> <span class="toc-text">分页功能核心要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mongodb的查询"><span class="toc-number">3.1.2.</span> <span class="toc-text">mongodb的查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#修改用户"><span class="toc-number">4.</span> <span class="toc-text">修改用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#删除用户"><span class="toc-number">5.</span> <span class="toc-text">删除用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文章管理"><span class="toc-number">6.</span> <span class="toc-text">文章管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#建立集合Schema"><span class="toc-number">6.1.</span> <span class="toc-text">建立集合Schema</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多集合联合查询"><span class="toc-number">6.1.1.</span> <span class="toc-text">多集合联合查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表单中如果有文件-需要以二进制的形式提交"><span class="toc-number">6.2.</span> <span class="toc-text">表单中如果有文件 需要以二进制的形式提交</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html-from的enctype属性"><span class="toc-number">6.2.1.</span> <span class="toc-text">html from的enctype属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用formidable模块处理二进制数据"><span class="toc-number">6.2.2.</span> <span class="toc-text">使用formidable模块处理二进制数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#读取文件FileReader"><span class="toc-number">6.2.3.</span> <span class="toc-text">读取文件FileReader</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日期格式化-dateformat模块"><span class="toc-number">6.3.</span> <span class="toc-text">日期格式化 dateformat模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分页"><span class="toc-number">6.4.</span> <span class="toc-text">分页</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mongoose-sex-page"><span class="toc-number">6.4.1.</span> <span class="toc-text">mongoose-sex-page</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mongoDB数据库添加账号"><span class="toc-number">7.</span> <span class="toc-text">mongoDB数据库添加账号</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建超级管理员账号"><span class="toc-number">7.1.</span> <span class="toc-text">创建超级管理员账号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建普通账户"><span class="toc-number">7.2.</span> <span class="toc-text">创建普通账户</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开发环境与生产环境"><span class="toc-number">8.</span> <span class="toc-text">开发环境与生产环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量"><span class="toc-number">8.1.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#morgan中间件"><span class="toc-number">8.2.</span> <span class="toc-text">morgan中间件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三方模块config"><span class="toc-number">8.3.</span> <span class="toc-text">第三方模块config</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用步骤"><span class="toc-number">8.3.1.</span> <span class="toc-text">使用步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将敏感信息存储到系统环境变量中"><span class="toc-number">8.3.2.</span> <span class="toc-text">将敏感信息存储到系统环境变量中</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文章评论"><span class="toc-number">9.</span> <span class="toc-text">文章评论</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#登陆功能实现" target="_blank" rel="noopener"><span class="toc-number">1.</span> <span class="toc-text">登陆功能实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于模版中的外链资源的路径问题" target="_blank" rel="noopener"><span class="toc-number">1.1.</span> <span class="toc-text">关于模版中的外链资源的路径问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库密码加密" target="_blank" rel="noopener"><span class="toc-number">1.2.</span> <span class="toc-text">数据库密码加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bcrypt" target="_blank" rel="noopener"><span class="toc-number">1.2.1.</span> <span class="toc-text">bcrypt</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#加密" target="_blank" rel="noopener"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">加密</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解密" target="_blank" rel="noopener"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">解密</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-amp-session" target="_blank" rel="noopener"><span class="toc-number">1.3.</span> <span class="toc-text">cookie &amp; session</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#http的无状态性" target="_blank" rel="noopener"><span class="toc-number">1.3.1.</span> <span class="toc-text">http的无状态性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie" target="_blank" rel="noopener"><span class="toc-number">1.3.2.</span> <span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#session" target="_blank" rel="noopener"><span class="toc-number">1.3.3.</span> <span class="toc-text">session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用session和cookie实现登陆功能" target="_blank" rel="noopener"><span class="toc-number">1.3.4.</span> <span class="toc-text">利用session和cookie实现登陆功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#express-session" target="_blank" rel="noopener"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">express-session</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#退出登陆" target="_blank" rel="noopener"><span class="toc-number">1.3.5.</span> <span class="toc-text">退出登陆</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#登陆拦截" target="_blank" rel="noopener"><span class="toc-number">1.4.</span> <span class="toc-text">登陆拦截</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加用户功能" target="_blank" rel="noopener"><span class="toc-number">2.</span> <span class="toc-text">添加用户功能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用Joi模块进行后端字段验证" target="_blank" rel="noopener"><span class="toc-number">2.1.</span> <span class="toc-text">用Joi模块进行后端字段验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误处理" target="_blank" rel="noopener"><span class="toc-number">2.2.</span> <span class="toc-text">错误处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#管理员用户列表页面" target="_blank" rel="noopener"><span class="toc-number">3.</span> <span class="toc-text">管理员用户列表页面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据分页" target="_blank" rel="noopener"><span class="toc-number">3.1.</span> <span class="toc-text">数据分页</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分页功能核心要素" target="_blank" rel="noopener"><span class="toc-number">3.1.1.</span> <span class="toc-text">分页功能核心要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mongodb的查询" target="_blank" rel="noopener"><span class="toc-number">3.1.2.</span> <span class="toc-text">mongodb的查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#修改用户" target="_blank" rel="noopener"><span class="toc-number">4.</span> <span class="toc-text">修改用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#删除用户" target="_blank" rel="noopener"><span class="toc-number">5.</span> <span class="toc-text">删除用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文章管理" target="_blank" rel="noopener"><span class="toc-number">6.</span> <span class="toc-text">文章管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#建立集合Schema" target="_blank" rel="noopener"><span class="toc-number">6.1.</span> <span class="toc-text">建立集合Schema</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多集合联合查询" target="_blank" rel="noopener"><span class="toc-number">6.1.1.</span> <span class="toc-text">多集合联合查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表单中如果有文件-需要以二进制的形式提交" target="_blank" rel="noopener"><span class="toc-number">6.2.</span> <span class="toc-text">表单中如果有文件 需要以二进制的形式提交</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html-from的enctype属性" target="_blank" rel="noopener"><span class="toc-number">6.2.1.</span> <span class="toc-text">html from的enctype属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用formidable模块处理二进制数据" target="_blank" rel="noopener"><span class="toc-number">6.2.2.</span> <span class="toc-text">使用formidable模块处理二进制数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#读取文件FileReader" target="_blank" rel="noopener"><span class="toc-number">6.2.3.</span> <span class="toc-text">读取文件FileReader</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日期格式化-dateformat模块" target="_blank" rel="noopener"><span class="toc-number">6.3.</span> <span class="toc-text">日期格式化 dateformat模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分页" target="_blank" rel="noopener"><span class="toc-number">6.4.</span> <span class="toc-text">分页</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mongoose-sex-page" target="_blank" rel="noopener"><span class="toc-number">6.4.1.</span> <span class="toc-text">mongoose-sex-page</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mongoDB数据库添加账号" target="_blank" rel="noopener"><span class="toc-number">7.</span> <span class="toc-text">mongoDB数据库添加账号</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建超级管理员账号" target="_blank" rel="noopener"><span class="toc-number">7.1.</span> <span class="toc-text">创建超级管理员账号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建普通账户" target="_blank" rel="noopener"><span class="toc-number">7.2.</span> <span class="toc-text">创建普通账户</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开发环境与生产环境" target="_blank" rel="noopener"><span class="toc-number">8.</span> <span class="toc-text">开发环境与生产环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量" target="_blank" rel="noopener"><span class="toc-number">8.1.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#morgan中间件" target="_blank" rel="noopener"><span class="toc-number">8.2.</span> <span class="toc-text">morgan中间件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三方模块config" target="_blank" rel="noopener"><span class="toc-number">8.3.</span> <span class="toc-text">第三方模块config</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用步骤" target="_blank" rel="noopener"><span class="toc-number">8.3.1.</span> <span class="toc-text">使用步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将敏感信息存储到系统环境变量中" target="_blank" rel="noopener"><span class="toc-number">8.3.2.</span> <span class="toc-text">将敏感信息存储到系统环境变量中</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文章评论" target="_blank" rel="noopener"><span class="toc-number">9.</span> <span class="toc-text">文章评论</span></a></li></ol>
                     </div>
                 </span>
             </div>
