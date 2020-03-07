@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="//litten.me">
   <title>express.js框架 | Psiphonc&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Express框架特性 提供了方便简洁的路由定义方式 对获取HTTP请求参数进行了简化处理 对模版引擎支持程度高，方便渲染动态HTML页面 提供了中间件机制有效控制HTTP请求 拥有大量第三方中间件对功能进行扩展  1234567891011121314151617&#x2F;&#x2F; 引入express框架const express &#x3D; require(&quot;express&quot;);&#x2F;&#x2F; 创建网站服务器const ap">
+  <meta name="description" content="Express框架特性 提供了方便简洁的路由定义方式 对获取HTTP请求参数进行了简化处理 对模版引擎支持程度高，方便渲染动态HTML页面 提供了中间件机制有效控制HTTP请求 拥有大量第三方中间件对功能进行扩展">
 <meta property="og:type" content="article">
 <meta property="og:title" content="express.js框架">
 <meta property="og:url" content="2020/03/07/express-js%E6%A1%86%E6%9E%B6/index.html">
 <meta property="og:site_name" content="Psiphonc&#39;s blog">
-<meta property="og:description" content="Express框架特性 提供了方便简洁的路由定义方式 对获取HTTP请求参数进行了简化处理 对模版引擎支持程度高，方便渲染动态HTML页面 提供了中间件机制有效控制HTTP请求 拥有大量第三方中间件对功能进行扩展  1234567891011121314151617&#x2F;&#x2F; 引入express框架const express &#x3D; require(&quot;express&quot;);&#x2F;&#x2F; 创建网站服务器const ap">
+<meta property="og:description" content="Express框架特性 提供了方便简洁的路由定义方式 对获取HTTP请求参数进行了简化处理 对模版引擎支持程度高，方便渲染动态HTML页面 提供了中间件机制有效控制HTTP请求 拥有大量第三方中间件对功能进行扩展">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="/assets/img/%E4%B8%AD%E9%97%B4%E4%BB%B6.jpg">
 <meta property="article:published_time" content="2020-03-07T12:23:45.000Z">
-<meta property="article:modified_time" content="2020-03-07T13:57:05.572Z">
+<meta property="article:modified_time" content="2020-03-07T17:39:39.892Z">
 <meta property="article:author" content="psiphonc">
 <meta property="article:tag" content="node">
 <meta property="article:tag" content="js">
@@ -190,6 +190,8 @@
 <li>提供了<strong>中间件机制</strong>有效<strong>控制HTTP请求</strong></li>
 <li>拥有大量第三方中间件对功能进行扩展</li>
 </ul>
+<a id="more"></a>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入express框架</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="comment">// 创建网站服务器</span></span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="comment">// 添加get路由</span></span><br><span class="line">app.get(<span class="string">"/"</span>, (req, res) =&gt; &#123;</span><br><span class="line">    res.send(<span class="string">"Hello Express"</span>);</span><br><span class="line">&#125;);</span><br><span class="line">app.get(<span class="string">"/list"</span>, (req, res) =&gt; &#123;</span><br><span class="line">    res.send(&#123;</span><br><span class="line">        name: <span class="string">"张三"</span>,</span><br><span class="line">        age: <span class="number">20</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//监听端口</span></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"服务器启动成功"</span>);</span><br></pre></td></tr></table></figure>
 
 <h3 id="send-方法"><a href="#send-方法" target="_blank" rel="noopener" class="headerlink" title="send()方法"></a>send()方法</h3><ol>
