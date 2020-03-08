@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/assets/img/session&cookie.jpg">
 <meta property="article:published_time" content="2020-03-07T12:35:40.000Z">
-<meta property="article:modified_time" content="2020-03-08T14:46:00.915Z">
+<meta property="article:modified_time" content="2020-03-08T17:36:08.210Z">
 <meta property="article:author" content="psiphonc">
 <meta property="article:tag" content="js">
 <meta property="article:tag" content="node">
@@ -322,7 +322,10 @@
 
 <h3 id="读取文件FileReader"><a href="#读取文件FileReader" class="headerlink" title="读取文件FileReader"></a>读取文件FileReader</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">reader.readAsDataURL(<span class="string">"文件"</span>);</span><br><span class="line">reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(reader.result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这个对象实际上就是把文件编码成dataurl，直接填写在src属性里</p>
+<ul>
+<li>这个对象实际上就是把文件编码成dataurl，直接填写在src属性里</li>
+<li>这是一个h5的dom对象 兼容性不太好！</li>
+</ul>
 <h2 id="日期格式化-dateformat模块"><a href="#日期格式化-dateformat模块" class="headerlink" title="日期格式化 dateformat模块"></a>日期格式化 dateformat模块</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dateformat = <span class="built_in">require</span>(<span class="string">"dateformat"</span>);</span><br><span class="line"><span class="keyword">const</span> tempalate = <span class="built_in">require</span>(<span class="string">"art-template"</span>);</span><br><span class="line">tempalate.defaults.imports.dateformat = dateformat;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;dateformat($value.publishDate, "yyyy-mm-dd")&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br></pre></td></tr></table></figure>
