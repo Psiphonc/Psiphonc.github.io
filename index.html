@@ -156,19 +156,118 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Ajax01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Ajax-三个简单案例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/08/Ajax01/">Ajax</a>
+      <a class="article-title" href="/2020/03/08/Ajax-%E4%B8%89%E4%B8%AA%E7%AE%80%E5%8D%95%E6%A1%88%E4%BE%8B/">Ajax 三个简单案例</a>
     </h1>
   
 
         
-        <a href="/2020/03/08/Ajax01/" class="archive-article-date">
+        <a href="/2020/03/08/Ajax-%E4%B8%89%E4%B8%AA%E7%AE%80%E5%8D%95%E6%A1%88%E4%BE%8B/" class="archive-article-date">
+  	<time datetime="2020-03-08T14:20:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="案例源码"><a href="#案例源码" class="headerlink" title="案例源码"></a>案例源码</h1><p><a href="https://github.com/Psiphonc/Ajax-demos" target="_blank" rel="noopener">github</a></p>
+<h1 id="验证邮箱唯一性"><a href="#验证邮箱唯一性" class="headerlink" title="验证邮箱唯一性"></a>验证邮箱唯一性</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"#email"</span>).on(&#123;</span><br><span class="line">        <span class="string">"focus"</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>($(<span class="keyword">this</span>).val() === <span class="string">"请输入邮箱地址"</span>) &#123;</span><br><span class="line">                $(<span class="keyword">this</span>).val(<span class="string">""</span>);</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">"blur"</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> email = $(<span class="keyword">this</span>).val().trim();</span><br><span class="line">            <span class="keyword">if</span>(email === <span class="string">""</span>) &#123;</span><br><span class="line">                $(<span class="keyword">this</span>).val(<span class="string">"请输入邮箱地址"</span>); </span><br><span class="line">                $(<span class="string">".info"</span>).fadeOut();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// $(this).fadeIn();</span></span><br><span class="line">                <span class="keyword">var</span> pattern = <span class="regexp">/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]&#123;2,4&#125;)$/</span>;</span><br><span class="line">                <span class="keyword">if</span> (!pattern.test(email)) &#123;</span><br><span class="line">                    $(<span class="string">".info"</span>).text(<span class="string">"请输入符合规则的邮箱地址！"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#f2dede"</span>).fadeIn();</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    ajax(&#123;</span><br><span class="line">                        url: <span class="string">"http://localhost:3000/verifyEmailAddress"</span>,</span><br><span class="line">                        cb: <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">                            <span class="keyword">var</span> &#123;ret, msg&#125; = result;</span><br><span class="line">                            <span class="built_in">console</span>.log(result);</span><br><span class="line">                            <span class="keyword">var</span> boxClass = <span class="string">""</span>;</span><br><span class="line">                            <span class="keyword">if</span>(ret) &#123;</span><br><span class="line">                                $(<span class="string">".info"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#96d196"</span>);</span><br><span class="line">                            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                                $(<span class="string">".info"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#f2dede"</span>);</span><br><span class="line">                            &#125;</span><br><span class="line">                            $(<span class="string">".info"</span>).text(msg).fadeIn();</span><br><span class="line">                        &#125;,</span><br><span class="line">                        error: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">                            <span class="built_in">console</span>.log(data);</span><br><span class="line">                        &#125;,</span><br><span class="line">                        data: &#123;</span><br><span class="line">                            email</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="搜索框内容提示"><a href="#搜索框内容提示" class="headerlink" title="搜索框内容提示"></a>搜索框内容提示</h1><ol>
+<li>获取搜索框并为其添加用户输入事件</li>
+<li>获取用户输入的关键字</li>
+<li>向服务器发送请求并携带关键字作为请求参数</li>
+<li>将响应数据显示在搜索框底部</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 设置定时器 避免频繁向服务器请求无用数据</span></span><br><span class="line">    $(<span class="string">"#search"</span>).timer = <span class="literal">null</span>;</span><br><span class="line">    $(<span class="string">"#search"</span>).on(&#123;</span><br><span class="line">        <span class="string">'input'</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 若输入了新字符 则清除上一个定时器</span></span><br><span class="line">            clearTimeout($(<span class="keyword">this</span>).timer);</span><br><span class="line">            <span class="keyword">if</span>($(<span class="keyword">this</span>).val().trim() === <span class="string">""</span>)&#123;</span><br><span class="line">                $(<span class="string">".list-group"</span>).hide();</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            $(<span class="keyword">this</span>).timer = setTimeout( <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                ajax(&#123;</span><br><span class="line">                url: <span class="string">"http://localhost:3000/hotquery"</span>,</span><br><span class="line">                data: &#123;</span><br><span class="line">                    keyword: $(<span class="keyword">this</span>).val()</span><br><span class="line">                &#125;,</span><br><span class="line">                cb: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">let</span> kws = data.kws;</span><br><span class="line">                    <span class="keyword">let</span> html = template(<span class="string">"tpl"</span>, &#123;kws&#125;);</span><br><span class="line">                    $(<span class="string">".list-group"</span>).show().html(html);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)&#125;, <span class="number">800</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'blur'</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">".list-group"</span>).hide()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="省市区三级联动"><a href="#省市区三级联动" class="headerlink" title="省市区三级联动"></a>省市区三级联动</h1><ol>
+<li>通过接口获取省份信息</li>
+<li>使用js获取省市区下拉框元素</li>
+<li>将服务器端返回的省份信息显示在下拉框中</li>
+<li>为下拉框元素添加表单值改变事件（change）</li>
+<li>当用户选择省份时，根据省份id获取城市信息</li>
+<li>当用户选择城市时，根据城市id获取县城信息</li>
+</ol>
+<p><a href="https://github.com/wendell-dev/area-china" target="_blank" rel="noopener">mongodb省市区数据库</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ajax</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/08/Ajax-%E4%B8%89%E4%B8%AA%E7%AE%80%E5%8D%95%E6%A1%88%E4%BE%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ajax" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/08/Ajax/">Ajax</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/08/Ajax/" class="archive-article-date">
   	<time datetime="2020-03-07T17:20:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
 </a>
         
@@ -184,7 +283,7 @@
 <li>搜索框文字提示</li>
 </ol>
         
-          <a class="article-more-a" href="/2020/03/08/Ajax01/#more">more >></a>
+          <a class="article-more-a" href="/2020/03/08/Ajax/#more">more >></a>
         
       
 
@@ -216,7 +315,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/08/Ajax01/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/03/08/Ajax/">展开全文 >></a>
         </p>
       
 
@@ -266,7 +365,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="登陆功能实现"><a href="#登陆功能实现" class="headerlink" title="登陆功能实现"></a>登陆功能实现</h1><ol>
+        <h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><a href="https://github.com/Psiphonc/express-blog" target="_blank" rel="noopener">github</a></p>
+<h1 id="登陆功能实现"><a href="#登陆功能实现" class="headerlink" title="登陆功能实现"></a>登陆功能实现</h1><ol>
 <li>创建用户集合，初始化用户<ol>
 <li>连接数据库</li>
 <li>创建用户集合</li>
