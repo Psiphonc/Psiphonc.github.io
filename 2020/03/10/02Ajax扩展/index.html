@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/2020/03/10/02Ajax%E6%89%A9%E5%B1%95/assets/CORS.png">
 <meta property="article:published_time" content="2020-03-09T16:59:01.000Z">
-<meta property="article:modified_time" content="2020-03-09T17:03:32.070Z">
+<meta property="article:modified_time" content="2020-03-12T06:56:13.671Z">
 <meta property="article:author" content="psiphonc">
 <meta property="article:tag" content="front-end">
 <meta property="article:tag" content="js">
@@ -434,8 +434,61 @@
 
 <h2 id="快捷方法-get-post"><a href="#快捷方法-get-post" class="headerlink" title="快捷方法$.get() $.post()"></a>快捷方法$.get() $.post()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$.<span class="keyword">get</span>("/<span class="keyword">get</span>",&#123;name: <span class="string">"Tom"</span>, <span class="attr">age</span>: <span class="number">30</span>&#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line">$.post(<span class="string">"/post"</span>,&#123;<span class="attr">name</span>: <span class="string">"Tom"</span>, <span class="attr">age</span>: <span class="number">30</span>&#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
 
+
 </li>
 </ol>
+<h2 id="jQuery中的Ajax全局事件"><a href="#jQuery中的Ajax全局事件" class="headerlink" title="jQuery中的Ajax全局事件"></a>jQuery中的Ajax全局事件</h2><p>只要页面中有Ajax请求被发送，对应的全局事件就会被触发</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全局事件一定要绑定在document上</span></span><br><span class="line">$(<span class="built_in">document</span>).ajaxStart() <span class="comment">// 请求开始发送时触发</span></span><br><span class="line">$(<span class="built_in">document</span>).ajaxComplete() <span class="comment">// 请求完成时触发</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="NProgress进度条插件"><a href="#NProgress进度条插件" class="headerlink" title="NProgress进度条插件"></a>NProgress进度条插件</h3><h1 id="RESTful风格的API"><a href="#RESTful风格的API" class="headerlink" title="RESTful风格的API"></a>RESTful风格的API</h1><table>
+<thead>
+<tr>
+<th align="center">请求方式</th>
+<th align="center">语义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">GET</td>
+<td align="center">获取数据</td>
+</tr>
+<tr>
+<td align="center">POST</td>
+<td align="center">添加数据</td>
+</tr>
+<tr>
+<td align="center">PUT</td>
+<td align="center">更新数据</td>
+</tr>
+<tr>
+<td align="center">DELETE</td>
+<td align="center">删除数据</td>
+</tr>
+<tr>
+<td align="center">由于动作已经在请求方式中得到体现，所以请求地址就不必再写动作了，只需要写资源名就可以了</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">例如请求users资源就直接写/users即可</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">- 获取用户id为1的用户信息</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">- GET: <a href="http://www.example.com/users/1" target="_blank" rel="noopener">http://www.example.com/users/1</a></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">- 创建用户</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">- POST: <a href="http://www.example.com/users" target="_blank" rel="noopener">http://www.example.com/users</a></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="服务器路由的写法"><a href="#服务器路由的写法" class="headerlink" title="服务器路由的写法"></a>服务器路由的写法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.delete(<span class="string">'users/:id'</span>, (req, res) =&gt; &#123;</span><br><span class="line">    <span class="comment">// params属性存储着一个保存着请求字段的对象</span></span><br><span class="line">    <span class="keyword">const</span> id = req.params.id;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
       
 
@@ -527,6 +580,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/03/13/Vue01%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vue01模版语法
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/03/08/01Ajax%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">01Ajax基础</div>
@@ -556,7 +618,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#preview"><span class="toc-number">1.</span> <span class="toc-text">preview</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端模版"><span class="toc-number">2.</span> <span class="toc-text">前端模版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#art-template"><span class="toc-number">2.1.</span> <span class="toc-text">art-template</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#FormData对象"><span class="toc-number">3.</span> <span class="toc-text">FormData对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用"><span class="toc-number">3.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用步骤"><span class="toc-number">3.2.</span> <span class="toc-text">使用步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#举例"><span class="toc-number">3.2.1.</span> <span class="toc-text">举例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FromData对象的实例方法"><span class="toc-number">3.3.</span> <span class="toc-text">FromData对象的实例方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#get方法"><span class="toc-number">3.3.1.</span> <span class="toc-text">get方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set方法"><span class="toc-number">3.3.2.</span> <span class="toc-text">set方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete方法"><span class="toc-number">3.3.3.</span> <span class="toc-text">delete方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#append方法"><span class="toc-number">3.3.4.</span> <span class="toc-text">append方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#append和set方法的区别"><span class="toc-number">3.3.5.</span> <span class="toc-text">append和set方法的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用FormData对象实现二进制文件上传"><span class="toc-number">3.4.</span> <span class="toc-text">使用FormData对象实现二进制文件上传</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#利用ajax对象的upload-onprogress事件实现文件上传进度展示"><span class="toc-number">3.4.1.</span> <span class="toc-text">利用ajax对象的upload.onprogress事件实现文件上传进度展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于FormData实现文件上传图片即时预览"><span class="toc-number">3.4.2.</span> <span class="toc-text">基于FormData实现文件上传图片即时预览</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#同源政策"><span class="toc-number">4.</span> <span class="toc-text">同源政策</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax请求限制"><span class="toc-number">4.1.</span> <span class="toc-text">Ajax请求限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同源"><span class="toc-number">4.2.</span> <span class="toc-text">同源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用JSONP解决同源限制"><span class="toc-number">4.3.</span> <span class="toc-text">使用JSONP解决同源限制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#优化"><span class="toc-number">4.3.1.</span> <span class="toc-text">优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数名传递"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">函数名传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用按钮控制请求的发送"><span class="toc-number">4.3.1.2.</span> <span class="toc-text">使用按钮控制请求的发送</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#封装jsonp函数"><span class="toc-number">4.3.1.3.</span> <span class="toc-text">封装jsonp函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用jsonp获取腾讯天气的数据"><span class="toc-number">4.3.2.</span> <span class="toc-text">利用jsonp获取腾讯天气的数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#腾讯天气的接口"><span class="toc-number">4.3.2.1.</span> <span class="toc-text">腾讯天气的接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#源码"><span class="toc-number">4.3.2.2.</span> <span class="toc-text">源码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CORS-跨域资源共享"><span class="toc-number">4.4.</span> <span class="toc-text">CORS 跨域资源共享</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#核心思想"><span class="toc-number">4.4.1.</span> <span class="toc-text">核心思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-number">4.4.2.</span> <span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#request模块"><span class="toc-number">4.4.2.1.</span> <span class="toc-text">request模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务器端实现"><span class="toc-number">4.4.2.2.</span> <span class="toc-text">服务器端实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨域请求的cookie"><span class="toc-number">4.4.3.</span> <span class="toc-text">跨域请求的cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#withCredentials属性"><span class="toc-number">4.4.3.1.</span> <span class="toc-text">withCredentials属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#跨域登陆"><span class="toc-number">4.4.3.1.1.</span> <span class="toc-text">跨域登陆</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jQuery中的ajax方法"><span class="toc-number">5.</span> <span class="toc-text">jQuery中的ajax方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#serialize方法"><span class="toc-number">5.1.</span> <span class="toc-text">serialize方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#将serialize请求字符串转换成对象"><span class="toc-number">5.1.1.</span> <span class="toc-text">将serialize请求字符串转换成对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-ajax方法发送jsonp请求"><span class="toc-number">5.2.</span> <span class="toc-text">使用$.ajax方法发送jsonp请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷方法-get-post"><span class="toc-number">5.3.</span> <span class="toc-text">快捷方法$.get() $.post()</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#preview"><span class="toc-number">1.</span> <span class="toc-text">preview</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端模版"><span class="toc-number">2.</span> <span class="toc-text">前端模版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#art-template"><span class="toc-number">2.1.</span> <span class="toc-text">art-template</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#FormData对象"><span class="toc-number">3.</span> <span class="toc-text">FormData对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用"><span class="toc-number">3.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用步骤"><span class="toc-number">3.2.</span> <span class="toc-text">使用步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#举例"><span class="toc-number">3.2.1.</span> <span class="toc-text">举例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FromData对象的实例方法"><span class="toc-number">3.3.</span> <span class="toc-text">FromData对象的实例方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#get方法"><span class="toc-number">3.3.1.</span> <span class="toc-text">get方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set方法"><span class="toc-number">3.3.2.</span> <span class="toc-text">set方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete方法"><span class="toc-number">3.3.3.</span> <span class="toc-text">delete方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#append方法"><span class="toc-number">3.3.4.</span> <span class="toc-text">append方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#append和set方法的区别"><span class="toc-number">3.3.5.</span> <span class="toc-text">append和set方法的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用FormData对象实现二进制文件上传"><span class="toc-number">3.4.</span> <span class="toc-text">使用FormData对象实现二进制文件上传</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#利用ajax对象的upload-onprogress事件实现文件上传进度展示"><span class="toc-number">3.4.1.</span> <span class="toc-text">利用ajax对象的upload.onprogress事件实现文件上传进度展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于FormData实现文件上传图片即时预览"><span class="toc-number">3.4.2.</span> <span class="toc-text">基于FormData实现文件上传图片即时预览</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#同源政策"><span class="toc-number">4.</span> <span class="toc-text">同源政策</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax请求限制"><span class="toc-number">4.1.</span> <span class="toc-text">Ajax请求限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同源"><span class="toc-number">4.2.</span> <span class="toc-text">同源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用JSONP解决同源限制"><span class="toc-number">4.3.</span> <span class="toc-text">使用JSONP解决同源限制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#优化"><span class="toc-number">4.3.1.</span> <span class="toc-text">优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数名传递"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">函数名传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用按钮控制请求的发送"><span class="toc-number">4.3.1.2.</span> <span class="toc-text">使用按钮控制请求的发送</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#封装jsonp函数"><span class="toc-number">4.3.1.3.</span> <span class="toc-text">封装jsonp函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用jsonp获取腾讯天气的数据"><span class="toc-number">4.3.2.</span> <span class="toc-text">利用jsonp获取腾讯天气的数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#腾讯天气的接口"><span class="toc-number">4.3.2.1.</span> <span class="toc-text">腾讯天气的接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#源码"><span class="toc-number">4.3.2.2.</span> <span class="toc-text">源码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CORS-跨域资源共享"><span class="toc-number">4.4.</span> <span class="toc-text">CORS 跨域资源共享</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#核心思想"><span class="toc-number">4.4.1.</span> <span class="toc-text">核心思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-number">4.4.2.</span> <span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#request模块"><span class="toc-number">4.4.2.1.</span> <span class="toc-text">request模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务器端实现"><span class="toc-number">4.4.2.2.</span> <span class="toc-text">服务器端实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨域请求的cookie"><span class="toc-number">4.4.3.</span> <span class="toc-text">跨域请求的cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#withCredentials属性"><span class="toc-number">4.4.3.1.</span> <span class="toc-text">withCredentials属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#跨域登陆"><span class="toc-number">4.4.3.1.1.</span> <span class="toc-text">跨域登陆</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jQuery中的ajax方法"><span class="toc-number">5.</span> <span class="toc-text">jQuery中的ajax方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#serialize方法"><span class="toc-number">5.1.</span> <span class="toc-text">serialize方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#将serialize请求字符串转换成对象"><span class="toc-number">5.1.1.</span> <span class="toc-text">将serialize请求字符串转换成对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-ajax方法发送jsonp请求"><span class="toc-number">5.2.</span> <span class="toc-text">使用$.ajax方法发送jsonp请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷方法-get-post"><span class="toc-number">5.3.</span> <span class="toc-text">快捷方法$.get() $.post()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery中的Ajax全局事件"><span class="toc-number">5.4.</span> <span class="toc-text">jQuery中的Ajax全局事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NProgress进度条插件"><span class="toc-number">5.4.1.</span> <span class="toc-text">NProgress进度条插件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RESTful风格的API"><span class="toc-number">6.</span> <span class="toc-text">RESTful风格的API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器路由的写法"><span class="toc-number">6.1.</span> <span class="toc-text">服务器路由的写法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -690,6 +752,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
