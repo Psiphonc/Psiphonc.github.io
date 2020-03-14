@@ -15,16 +15,16 @@
 <meta property="og:site_name" content="Psiphonc&#39;s blog">
 <meta property="og:description" content="概述Vue是一个渐进式的js框架 特点 渐进式：从上到下是递进的关系 声明式渲染 组件系统 客户端路由 集中式状态管理 项目构建   虚拟DOM官方文档中文文档API">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/assets/img/vue01/mvvm.png">
-<meta property="og:image" content="http://yoursite.com/assets/img/vue01/steps.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/03/13/Vue01%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%95/mvvm.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/13/Vue01%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%95/steps.PNG">
 <meta property="article:published_time" content="2020-03-13T11:54:01.000Z">
-<meta property="article:modified_time" content="2020-03-14T12:24:14.383Z">
+<meta property="article:modified_time" content="2020-03-14T12:35:37.112Z">
 <meta property="article:author" content="psiphonc">
 <meta property="article:tag" content="front-end">
 <meta property="article:tag" content="js">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/assets/img/vue01/mvvm.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/03/13/Vue01%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%95/mvvm.png">
   
     <link rel="alternative" href="/atom.xml" title="Psiphonc&#39;s blog" type="application/atom+xml">
   
@@ -239,7 +239,7 @@
 <h4 id="MVVM设计思想"><a href="#MVVM设计思想" class="headerlink" title="MVVM设计思想"></a>MVVM设计思想</h4>MVC 是后端的分层开发概念； MVVM是前端视图层的概念，主要关注于 视图层分离，也就是说：MVVM把前端的视图层，分为了 三部分 Model, View , VM ViewModel</li>
 <li>M：model</li>
 <li>V：view</li>
-<li>VM：view-model<br><img src="/assets/img/vue01/mvvm.png" alt="mvvm"><h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">v-on:click</span>=<span class="string">"num++"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li>VM：view-model<br><img src="mvvm.png" alt="mvvm"><h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">v-on:click</span>=<span class="string">"num++"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 也可以简写为<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"num++"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 当事件触发的方法复杂时要这样写<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 方法一：函数名 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"handle"</span>&gt;</span>1<span class="tag">&lt;<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 方法二：函数调用 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"handle(param, $event)"</span>&gt;</span>2<span class="tag">&lt;<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue (&#123;</span></span><br><span class="line"><span class="actionscript">    el: <span class="string">'#app'</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line">      num: 0</span><br><span class="line">    &#125;,</span><br><span class="line">    methods &#123;</span><br><span class="line"><span class="actionscript">      handle: <span class="function"><span class="keyword">function</span><span class="params">(param, event)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(param);</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(event.taarget.tagName);</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(event.taarget.innerHTML);</span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 这里如果直接写num时访问不到num的</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.num++; <span class="comment">// this指向的就是Vue实例vm</span></span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="比较给函数名和函数调用两种绑定方式"><a href="#比较给函数名和函数调用两种绑定方式" class="headerlink" title="比较给函数名和函数调用两种绑定方式"></a>比较给函数名和函数调用两种绑定方式</h4></li>
@@ -311,7 +311,7 @@ if else控制的是dom<br>show仅控制样式<h4 id="循环"><a href="#循环" c
 </li>
 <li>基于数据重构UI效果<ul>
 <li>将静态的结构和样式重构为基于Vue模版语法的形式</li>
-<li>处理事件绑定和js控制逻辑<br><img src="/assets/img/vue01/steps.PNG" alt="flow"> </li>
+<li>处理事件绑定和js控制逻辑<br><img src="steps.PNG" alt="flow"> </li>
 </ul>
 </li>
 </ol>

@@ -15,15 +15,15 @@
 <meta property="og:site_name" content="Psiphonc&#39;s blog">
 <meta property="og:description" content="preview 前端模版 FormData对象 同源政策和解决方案 jquery封装的ajax">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2020/03/10/02Ajax%E6%89%A9%E5%B1%95/assets/CORS.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/10/02Ajax%E6%89%A9%E5%B1%95/CORS.png">
 <meta property="article:published_time" content="2020-03-09T16:59:01.000Z">
-<meta property="article:modified_time" content="2020-03-12T06:56:13.671Z">
+<meta property="article:modified_time" content="2020-03-14T12:41:35.819Z">
 <meta property="article:author" content="psiphonc">
 <meta property="article:tag" content="front-end">
 <meta property="article:tag" content="js">
 <meta property="article:tag" content="Ajax">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/03/10/02Ajax%E6%89%A9%E5%B1%95/assets/CORS.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/03/10/02Ajax%E6%89%A9%E5%B1%95/CORS.png">
   
     <link rel="alternative" href="/atom.xml" title="Psiphonc&#39;s blog" type="application/atom+xml">
   
@@ -402,7 +402,7 @@
 
 <h4 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h4><p><a href="www.github.com">github</a></p>
 <h2 id="CORS-跨域资源共享"><a href="#CORS-跨域资源共享" class="headerlink" title="CORS 跨域资源共享"></a>CORS 跨域资源共享</h2><p>CORS: Cross-origin resource sharing<br>CORS允许浏览器向跨域服务器发送Ajax请求，克服了Ajax只能同源使用的限制<br>只需要在后端做一些判断，前端可以使用ajax直接访问非同源数据</p>
-<h3 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h3><p>同源政策是浏览器的规定，服务器端并没有限制，CORS的思想就是把非同源请求先发到自己服务器端，自己的服务器再去请求非同源数据<br><img src="./assets/CORS.png" alt="CORS"></p>
+<h3 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h3><p>同源政策是浏览器的规定，服务器端并没有限制，CORS的思想就是把非同源请求先发到自己服务器端，自己的服务器再去请求非同源数据<br><img src="CORS.png" alt="CORS"></p>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><h4 id="request模块"><a href="#request模块" class="headerlink" title="request模块"></a>request模块</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> request = <span class="built_in">require</span>(<span class="string">"request"</span>);</span><br><span class="line">request(<span class="string">"example.com"</span>, (err, res, body) =&gt; &#123;</span><br><span class="line">    <span class="comment">// res响应头</span></span><br><span class="line">    <span class="comment">// body响应的主体内容</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <h4 id="服务器端实现"><a href="#服务器端实现" class="headerlink" title="服务器端实现"></a>服务器端实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 服务器A(prot:3000)</span></span><br><span class="line">app.get(<span class="string">"server"</span>, (req, res) =&gt; &#123;</span><br><span class="line">    request(<span class="string">"http://localhost:3001/cross"</span>, (err, response, body) =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">        <span class="built_in">console</span>.log(response);</span><br><span class="line">        <span class="built_in">console</span>.log(body);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -463,31 +463,18 @@
 <td align="center">DELETE</td>
 <td align="center">删除数据</td>
 </tr>
-<tr>
-<td align="center">由于动作已经在请求方式中得到体现，所以请求地址就不必再写动作了，只需要写资源名就可以了</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">例如请求users资源就直接写/users即可</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">- 获取用户id为1的用户信息</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">- GET: <a href="http://www.example.com/users/1" target="_blank" rel="noopener">http://www.example.com/users/1</a></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">- 创建用户</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">- POST: <a href="http://www.example.com/users" target="_blank" rel="noopener">http://www.example.com/users</a></td>
-<td align="center"></td>
-</tr>
 </tbody></table>
+<p>由于动作已经在请求方式中得到体现，所以请求地址就不必再写动作了，只需要写资源名就可以了<br>例如请求users资源就直接写/users即可</p>
+<ul>
+<li>获取用户id为1的用户信息<ul>
+<li>GET: <a href="http://www.example.com/users/1" target="_blank" rel="noopener">http://www.example.com/users/1</a></li>
+</ul>
+</li>
+<li>创建用户<ul>
+<li>POST: <a href="http://www.example.com/users" target="_blank" rel="noopener">http://www.example.com/users</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="服务器路由的写法"><a href="#服务器路由的写法" class="headerlink" title="服务器路由的写法"></a>服务器路由的写法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.delete(<span class="string">'users/:id'</span>, (req, res) =&gt; &#123;</span><br><span class="line">    <span class="comment">// params属性存储着一个保存着请求字段的对象</span></span><br><span class="line">    <span class="keyword">const</span> id = req.params.id;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
       
