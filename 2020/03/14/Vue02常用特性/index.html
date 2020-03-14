@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/3 | Psiphonc&#39;s blog</title>
+  <title>Vue02常用特性 | Psiphonc&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Psiphonc&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/03/index.html">
+  <meta name="description" content="preview 表单操作 自定义指令 计算属性 侦听器 过滤器 Vue实例生命周期 数组API 案例">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue02常用特性">
+<meta property="og:url" content="http://yoursite.com/2020/03/14/Vue02%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/index.html">
 <meta property="og:site_name" content="Psiphonc&#39;s blog">
+<meta property="og:description" content="preview 表单操作 自定义指令 计算属性 侦听器 过滤器 Vue实例生命周期 数组API 案例">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/03/14/Vue02%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/assets/%E4%BE%A6%E5%90%AC%E5%99%A8.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/03/14/Vue02%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/assets/lifecycle.png">
+<meta property="article:published_time" content="2020-03-14T12:16:58.000Z">
+<meta property="article:modified_time" content="2020-03-14T12:20:40.968Z">
 <meta property="article:author" content="psiphonc">
+<meta property="article:tag" content="front-end">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/03/14/Vue02%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/assets/%E4%BE%A6%E5%90%AC%E5%99%A8.PNG">
   
     <link rel="alternative" href="/atom.xml" title="Psiphonc&#39;s blog" type="application/atom+xml">
   
@@ -166,36 +176,140 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Vue02常用特性" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Vue02常用特性
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/14/Vue02%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/" class="archive-article-date">
+
+        
+        <a href="/2020/03/14/Vue02%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/" class="archive-article-date">
   	<time datetime="2020-03-14T12:16:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-14</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/14/Vue02%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/">Vue02常用特性</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="preview"><a href="#preview" class="headerlink" title="preview"></a>preview</h1><ul>
+<li>表单操作</li>
+<li>自定义指令</li>
+<li>计算属性</li>
+<li>侦听器</li>
+<li>过滤器</li>
+<li>Vue实例生命周期</li>
+<li>数组API</li>
+<li>案例</li>
+</ul>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<h1 id="表单操作"><a href="#表单操作" class="headerlink" title="表单操作"></a>表单操作</h1><ul>
+<li><p>input 单行文本</p>
+</li>
+<li><p>textarea 多行文本</p>
+</li>
+<li><p>select 下拉多选</p>
+</li>
+<li><p>radio 单选框</p>
+</li>
+<li><p>checkbox 多选框</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Form<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.app</span> &#123;</span></span><br><span class="line">            width: 300px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.app</span> <span class="selector-tag">form</span> &#123;</span></span><br><span class="line">            width: 100%;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.row</span> &gt; <span class="selector-tag">span</span><span class="selector-pseudo">:first-child</span> &#123;</span></span><br><span class="line">            display: block;</span><br><span class="line">            float: left;</span><br><span class="line">            width: 80px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.fl</span> &#123;</span></span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.row</span> &#123;</span></span><br><span class="line">            zoom: 1;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.row</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line">            visibility: hidden;</span><br><span class="line">            display: block;</span><br><span class="line">            font-size: 0;</span><br><span class="line">            content: " ";</span><br><span class="line">            clear: both;</span><br><span class="line">            height: 0;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span>姓名：<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"uname"</span> <span class="attr">id</span>=<span class="string">"uname"</span> <span class="attr">class</span>=<span class="string">"fl"</span> <span class="attr">v-model</span>=<span class="string">"uname"</span> <span class="attr">placeholder</span>=<span class="string">"请输入姓名"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span>性别：<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"gender-group fl"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">id</span>=<span class="string">"male"</span> <span class="attr">value</span>=<span class="string">"0"</span> <span class="attr">v-model</span>=<span class="string">"gender"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"male"</span>&gt;</span>男<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">id</span>=<span class="string">"female"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">v-model</span>=<span class="string">"gender"</span>&gt;</span> </span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"female"</span>&gt;</span>女<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span>爱好：<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"hobby-group fl"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"basketball"</span> <span class="attr">value</span>=<span class="string">"0"</span> <span class="attr">v-model</span>=<span class="string">"hobby"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"basketball"</span>&gt;</span>篮球<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"sing"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">v-model</span>=<span class="string">"hobby"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"basketball"</span>&gt;</span>唱歌<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"code"</span> <span class="attr">value</span>=<span class="string">"2"</span> <span class="attr">v-model</span>=<span class="string">"hobby"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"basketball"</span>&gt;</span>写代码<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span>职业：<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"job"</span> <span class="attr">id</span>=<span class="string">"job"</span> <span class="attr">class</span>=<span class="string">"fl"</span> <span class="attr">v-model</span>=<span class="string">"job"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"0"</span>&gt;</span>请选择职业...<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>程序员<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>教师<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span>律师<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span>个人简介：<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"intro"</span> <span class="attr">id</span>=<span class="string">"intro"</span> <span class="attr">cols</span>=<span class="string">"25"</span> <span class="attr">rows</span>=<span class="string">"3"</span> <span class="attr">class</span>=<span class="string">"fl"</span> <span class="attr">v-model</span>=<span class="string">"intro"</span> <span class="attr">placeholder</span>=<span class="string">"请输入个人简介"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span> @<span class="attr">click.prevent</span>=<span class="string">"handle"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">            el: <span class="string">"#app"</span>,</span></span><br><span class="line">            data: &#123;</span><br><span class="line"><span class="actionscript">                uname: <span class="string">""</span>,</span></span><br><span class="line">                gender: 0,</span><br><span class="line">                hobby: [],</span><br><span class="line">                job: 0,</span><br><span class="line"><span class="actionscript">                intro: <span class="string">""</span></span></span><br><span class="line">            &#125;,</span><br><span class="line">            methods: &#123;</span><br><span class="line"><span class="actionscript">                handle: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(<span class="keyword">this</span>.uname);</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="表单域修饰符"><a href="#表单域修饰符" class="headerlink" title="表单域修饰符"></a>表单域修饰符</h2></li>
+<li><p>number: 转化为数值</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model.number</span>=<span class="string">"age"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el: <span class="string">"#app"</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="actionscript">            age: <span class="string">""</span></span></span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line"><span class="actionscript">            handle: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="keyword">this</span>.age + <span class="number">13</span>);</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>trim: 去掉首位空白字符(用法和上面差不多 不举例了)</p>
+</li>
+<li><p>lazy： 将input事件(默认)切换为change事件</p>
+<ul>
+<li>因为input事件只要有输入就会触发，change事件在失去焦点后才触发，所以是懒的，lazy </li>
+</ul>
+</li>
+</ul>
+<h1 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(<span class="string">'指令名称'</span>,&#123;</span><br><span class="line">    <span class="comment">// el表示指令所绑定的元素</span></span><br><span class="line">    inserted: <span class="function"><span class="keyword">function</span>(<span class="params">el</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 实现业务逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>定义的时候不用加v- 使用的时候要加<br>直接看例子<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-focus</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    Vue.directive(<span class="string">'focus'</span>,&#123;</span></span><br><span class="line"><span class="actionscript">        inserted: <span class="function"><span class="keyword">function</span><span class="params">(el)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="comment">// 元素获得焦点</span></span></span><br><span class="line">            el.focus();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h2></li>
+<li>bind：只调用一次，指令第一次绑定到元素的时候就调用，可以用来进行一次性的初始化设置</li>
+<li>inserted：被绑定元素插入父级节点时调用（可以是未被插入的父级节点，只要存在就可以）<br>挖个坑，学完后面回来再补充<h3 id="钩子函数参数"><a href="#钩子函数参数" class="headerlink" title="钩子函数参数"></a>钩子函数参数</h3></li>
+<li>el：指令所绑定的元素，可以用来直接操纵DOM</li>
+<li>binding：一个对象。包含以下属性<ul>
+<li>name：指令名称，不包括v-</li>
+<li>value：指令的绑定值（经过计算）</li>
+<li>oldValue：指令绑定的前一个值</li>
+<li>expression：字符串形式的指令表达式</li>
+<li>arg：传给指令的参数（可选）</li>
+<li>modifiers：包含修饰符的对象<h2 id="带参数的自定义指令"><a href="#带参数的自定义指令" class="headerlink" title="带参数的自定义指令"></a>带参数的自定义指令</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-color</span>=<span class="string">"opts"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    Vue.directive(<span class="string">'focus'</span>,&#123;</span></span><br><span class="line"><span class="actionscript">        bind: <span class="function"><span class="keyword">function</span><span class="params">(el, binding)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="comment">// 根据指令的参数去设置背景色</span></span></span><br><span class="line">            el.style.backgroundColor = binding.value.color;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el: <span class="string">"#app"</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line">            opts: &#123;</span><br><span class="line"><span class="actionscript">                color: <span class="string">"blue"</span></span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="局部指令"><a href="#局部指令" class="headerlink" title="局部指令"></a>局部指令</h2>在Vue实例中添加额外属性directives，里面包含要定义的局部指令<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">directives: &#123;</span><br><span class="line">    focus: &#123;</span><br><span class="line">        <span class="comment">// 指令的定义</span></span><br><span class="line">        inserted: <span class="function"><span class="keyword">function</span>(<span class="params">el</span>) </span>&#123;</span><br><span class="line">            el.focus()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h1>表达式的计算逻辑可能会比较复杂，使用计算属性可以使模版内容更加简洁<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;&#123;msg&#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;&#123;msg.split("").reverse().join("")&#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+第二个div里的东西太长了 可读性很差<h2 id="计算属性的用法"><a href="#计算属性的用法" class="headerlink" title="计算属性的用法"></a>计算属性的用法</h2>在Vue实例中添加computed属性，对应一个运算方法<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;&#123;msg&#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- 直接写计算属性的方法名 不需要调用 --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;&#123;reversedMessage&#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el: <span class="string">"#app"</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="actionscript">            msg: <span class="string">"Hello"</span></span></span><br><span class="line">        &#125;,</span><br><span class="line">        computed: &#123;</span><br><span class="line"><span class="actionscript">            reversedMessage: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">return</span> <span class="keyword">this</span>.msg.split(<span class="string">""</span>).reverse().join(<span class="string">""</span>);</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="计算属性与方法的区别"><a href="#计算属性与方法的区别" class="headerlink" title="计算属性与方法的区别"></a>计算属性与方法的区别</h2></li>
+</ul>
+</li>
+<li>计算属性是基于他们的<strong>依赖</strong>（依赖就是Vue实例中的data属性）进行缓存的<ul>
+<li>计算属性会把第一次执行的结果缓存起来，第二次使用的时候就不再调用方法了，直接填上结果</li>
+</ul>
+</li>
+<li>方法不存在缓存<ul>
+<li>如果把methods属性里的方法填进插值表达式并调用，调用几次就会执行几次<h1 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a>侦听器</h1><h2 id="侦听起的应用场景"><a href="#侦听起的应用场景" class="headerlink" title="侦听起的应用场景"></a>侦听起的应用场景</h2>数据变化时执行异步或开销较大的操作<br><img src="./assets/%E4%BE%A6%E5%90%AC%E5%99%A8.PNG" alt="侦听器"><h2 id="侦听器的用法"><a href="#侦听器的用法" class="headerlink" title="侦听器的用法"></a>侦听器的用法</h2>在Vue实例对象下添加watch属性<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>First Name：<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-modoel</span>=<span class="string">"firstName"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>Last Name：<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-modoel</span>=<span class="string">"lastName"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;fullName&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el: <span class="string">"#app"</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="actionscript">            firstName: <span class="string">"Carl"</span>,</span></span><br><span class="line"><span class="actionscript">            lastName: <span class="string">"Gallagher"</span>,</span></span><br><span class="line"><span class="actionscript">            fullName: <span class="string">"Carl Gallagher"</span></span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="actionscript">        <span class="comment">// 与要监听的数据同名 当该数据改变时 Vue自动调用 并将新值val作为形参传入</span></span></span><br><span class="line">        watch: &#123;</span><br><span class="line"><span class="actionscript">            firstName: <span class="function"><span class="keyword">function</span><span class="params">(val)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="comment">// val值表达变化之后的值</span></span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.fullName = val + <span class="string">" "</span> + <span class="keyword">this</span>.lastName;</span></span><br><span class="line">            &#125;,</span><br><span class="line"><span class="actionscript">            lastName: <span class="function"><span class="keyword">function</span><span class="params">(val)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.fullName = <span class="keyword">this</span>.firstName + <span class="string">" "</span> + val;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h1>主要是用来格式化数据的，比如首字母大写或者日期格式化<h2 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.filter(<span class="string">"过滤器名称"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 过滤器业务熟悉</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+例如<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"type"</span> <span class="attr">v-model</span>=<span class="string">"msg"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 有点像linux的管道 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;msg | capitalize&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    Vue.filter(<span class="string">"capitalize"</span>, <span class="function"><span class="keyword">function</span><span class="params">(val)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">return</span> val.charAt(<span class="number">0</span>).toUpperCase() + val.slice(<span class="number">1</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el: <span class="string">"#app"</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="actionscript">            msg: <span class="string">""</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="在绑定属性的时候使用过滤器"><a href="#在绑定属性的时候使用过滤器" class="headerlink" title="在绑定属性的时候使用过滤器"></a>在绑定属性的时候使用过滤器</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:abc</span>=<span class="string">"msg | capitalize"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="局部过滤器"><a href="#局部过滤器" class="headerlink" title="局部过滤器"></a>局部过滤器</h2>在Vue实例中添加filter属性</li>
+</ul>
+</li>
+</ul>
+<h3 id="带参数的过滤器"><a href="#带参数的过滤器" class="headerlink" title="带参数的过滤器"></a>带参数的过滤器</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;&#123;date | format('yyyy-MM-dd')&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    Vue.filter(<span class="string">"format"</span>, <span class="function"><span class="keyword">function</span><span class="params">(val, fmt)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> getDate = <span class="keyword">new</span> <span class="built_in">Date</span>(val);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> o = &#123;</span></span><br><span class="line"><span class="actionscript">            <span class="string">'M+'</span>: getDate.getMonth() + <span class="number">1</span>,</span></span><br><span class="line"><span class="actionscript">            <span class="string">'d+'</span>: getDate.getDate(),</span></span><br><span class="line"><span class="actionscript">            <span class="string">'h+'</span>: getDate.getHours(),</span></span><br><span class="line"><span class="actionscript">            <span class="string">'m+'</span>: getDate.getMinutes(),</span></span><br><span class="line"><span class="actionscript">            <span class="string">'s+'</span>: getDate.getSeconds(),</span></span><br><span class="line"><span class="javascript">            <span class="string">'q+'</span>: <span class="built_in">Math</span>.floor((getDate.getMonth() + <span class="number">3</span>) / <span class="number">3</span>),</span></span><br><span class="line"><span class="actionscript">            <span class="string">'S'</span>: getDate.getMilliseconds()</span></span><br><span class="line">        &#125;;</span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (<span class="regexp">/(y+)/</span>.test(fmt)) &#123;</span></span><br><span class="line"><span class="javascript">            fmt = fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (getDate.getFullYear() + <span class="string">''</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length))</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="keyword">for</span> (<span class="keyword">let</span> k <span class="keyword">in</span> o) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'('</span> + k + <span class="string">')'</span>).test(fmt)) &#123;</span></span><br><span class="line"><span class="javascript">            fmt = fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="built_in">RegExp</span>.$<span class="number">1.</span>length === <span class="number">1</span>) ? (o[k]) : ((<span class="string">'00'</span> + o[k]).substr((<span class="string">''</span> + o[k]).length)))</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="actionscript">        <span class="keyword">return</span> fmt;</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><p>Vue实例的产生是一个过程，其中包含了一系列函数的调用</p>
+<h2 id="主要阶段（生命周期钩子）"><a href="#主要阶段（生命周期钩子）" class="headerlink" title="主要阶段（生命周期钩子）"></a>主要阶段（生命周期钩子）</h2><ul>
+<li>挂载（初始化相关属性）<ul>
+<li>beforeCreate</li>
+<li>created</li>
+<li>beforeMount</li>
+<li>mounted</li>
+</ul>
+</li>
+<li>更新（元素或组件的变更操作）<ul>
+<li>breforeUpdate</li>
+<li>updated</li>
+</ul>
+</li>
+<li>销毁（销毁相关属性）<ul>
+<li>beforeDestroy</li>
+<li>destroyed</li>
+</ul>
+</li>
+</ul>
+<p><img src="./assets/lifecycle.png" alt="lifecycle"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">    el: <span class="string">'#app'</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line"><span class="actionscript">      message: <span class="string">'Vue的生命周期'</span></span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    beforeCreate: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">'------beforeCreate创建前状态------'</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span> , <span class="string">"el     : "</span> + <span class="keyword">this</span>.$el); <span class="comment">//undefined</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); <span class="comment">//undefined </span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message) </span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    created: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">'------created创建完毕状态------'</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + <span class="keyword">this</span>.$el); <span class="comment">//undefined</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); <span class="comment">//已被初始化 </span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message); <span class="comment">//已被初始化</span></span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    beforeMount: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">'------beforeMount挂载前状态------'</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + (<span class="keyword">this</span>.$el)); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); <span class="comment">//已被初始化  </span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message); <span class="comment">//已被初始化  </span></span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    mounted: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">'------mounted 挂载结束状态------'</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + <span class="keyword">this</span>.$el); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);    </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message); <span class="comment">//已被初始化 </span></span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    beforeUpdate: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">'beforeUpdate 更新前状态===============》'</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);   </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message); </span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    updated: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">'updated 更新完成状态===============》'</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message); </span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    beforeDestroy: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">'beforeDestroy 销毁前状态===============》'</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);    </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message); </span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    destroyed: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">'destroyed 销毁完成状态===============》'</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);  </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message)</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="数组相关API"><a href="#数组相关API" class="headerlink" title="数组相关API"></a>数组相关API</h1><h2 id="变异方法（修改原数据）"><a href="#变异方法（修改原数据）" class="headerlink" title="变异方法（修改原数据）"></a>变异方法（修改原数据）</h2><p>由Vue包装的数组方法，只要数组变化，模版内容跟着变化</p>
+<ul>
+<li>push()</li>
+<li>pop()</li>
+<li>shift()</li>
+<li>unshift()</li>
+<li>splice()</li>
+<li>sort()</li>
+<li>reverse()<h2 id="替换数组（生成新的数组）"><a href="#替换数组（生成新的数组）" class="headerlink" title="替换数组（生成新的数组）"></a>替换数组（生成新的数组）</h2></li>
+<li>filter()</li>
+<li>concat()</li>
+<li>slice()<h2 id="数组的响应式变化API"><a href="#数组的响应式变化API" class="headerlink" title="数组的响应式变化API"></a>数组的响应式变化API</h2></li>
+<li>Vue.set(vm.items, indexOfItem, newValue)</li>
+<li>vm.$set(vm.items, indexOfItem, newValue)</li>
+</ul>
+<h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.title</span>&gt;<span class="selector-tag">td</span> &#123;</span></span><br><span class="line">            font-weight: bolder;</span><br><span class="line">            font-size: 30px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.head</span> &#123;</span></span><br><span class="line">            background-color: orange</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.container</span> &gt; <span class="selector-tag">table</span> &#123;</span></span><br><span class="line">            width: 600px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.container</span> &gt; <span class="selector-tag">table</span> <span class="selector-tag">tr</span><span class="selector-pseudo">:nth-child(2)</span> &#123;</span></span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>图书管理<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container "</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span> <span class="attr">class</span>=<span class="string">"title"</span> &gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"4"</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>图书管理<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span> <span class="attr">class</span>=<span class="string">"head"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"4"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"bid"</span>&gt;</span>编号<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model.lazy</span>=<span class="string">"bid"</span> <span class="attr">:disabled</span>=<span class="string">"bidFlag"</span> <span class="attr">v-focus</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"bname"</span>&gt;</span>名称<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model.lazy</span>=<span class="string">"bname"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"addBook"</span> <span class="attr">:disabled</span>=<span class="string">"addFlag"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"float: right;padding-right: 40px;"</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">span</span>&gt;</span>图书总数：<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;bookCnt&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span> <span class="attr">class</span>=<span class="string">"head"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>编号<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>名称<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>时间<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">th</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>操作<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span> <span class="attr">:key</span>=<span class="string">"item.bid"</span> <span class="attr">v-for</span>=<span class="string">"item in books"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>&#123;&#123;item.bid&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>&#123;&#123;item.bname&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>&#123;&#123;item.date | dateFormat("yyyy-MM-dd")&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span> @<span class="attr">click.prevent</span>=<span class="string">"edit(item.bid)"</span>&gt;</span>修改<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">span</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span> @<span class="attr">click.prevent</span>=<span class="string">"remove(item.bid)"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 自定义指令</span></span></span><br><span class="line"><span class="actionscript">        Vue.directive(<span class="string">"focus"</span>,&#123;</span></span><br><span class="line"><span class="actionscript">            inserted: <span class="function"><span class="keyword">function</span><span class="params">(el)</span> </span>&#123;</span></span><br><span class="line">                el.focus();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="actionscript">        <span class="comment">// 过滤器</span></span></span><br><span class="line"><span class="actionscript">        Vue.filter(<span class="string">"dateFormat"</span>, <span class="function"><span class="keyword">function</span><span class="params">(val, fmt)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> getDate = <span class="keyword">new</span> <span class="built_in">Date</span>(val);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> o = &#123;</span></span><br><span class="line"><span class="actionscript">                <span class="string">'M+'</span>: getDate.getMonth() + <span class="number">1</span>,</span></span><br><span class="line"><span class="actionscript">                <span class="string">'d+'</span>: getDate.getDate(),</span></span><br><span class="line"><span class="actionscript">                <span class="string">'h+'</span>: getDate.getHours(),</span></span><br><span class="line"><span class="actionscript">                <span class="string">'m+'</span>: getDate.getMinutes(),</span></span><br><span class="line"><span class="actionscript">                <span class="string">'s+'</span>: getDate.getSeconds(),</span></span><br><span class="line"><span class="javascript">                <span class="string">'q+'</span>: <span class="built_in">Math</span>.floor((getDate.getMonth() + <span class="number">3</span>) / <span class="number">3</span>),</span></span><br><span class="line"><span class="actionscript">                <span class="string">'S'</span>: getDate.getMilliseconds()</span></span><br><span class="line">            &#125;;</span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> (<span class="regexp">/(y+)/</span>.test(fmt)) &#123;</span></span><br><span class="line"><span class="javascript">                fmt = fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (getDate.getFullYear() + <span class="string">''</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length));</span></span><br><span class="line">            &#125;</span><br><span class="line"><span class="javascript">            <span class="keyword">for</span> (<span class="keyword">let</span> k <span class="keyword">in</span> o) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'('</span> + k + <span class="string">')'</span>).test(fmt)) &#123;</span></span><br><span class="line"><span class="javascript">                fmt = fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="built_in">RegExp</span>.$<span class="number">1.</span>length === <span class="number">1</span>) ? (o[k]) : ((<span class="string">'00'</span> + o[k]).substr((<span class="string">''</span> + o[k]).length)))</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span> fmt;</span></span><br><span class="line">        &#125;);</span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">            el: <span class="string">"#app"</span>,</span></span><br><span class="line">            data: &#123;</span><br><span class="line"><span class="actionscript">                bid: <span class="string">""</span>,</span></span><br><span class="line"><span class="actionscript">                bname: <span class="string">""</span>,</span></span><br><span class="line"><span class="actionscript">                bidFlag: <span class="literal">false</span>,</span></span><br><span class="line"><span class="actionscript">                addFlag: <span class="literal">false</span>,</span></span><br><span class="line">                books: []</span><br><span class="line">            &#125;,</span><br><span class="line">            methods: &#123;</span><br><span class="line"><span class="actionscript">                addBook: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">if</span>(<span class="keyword">this</span>.bidFlag)&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">this</span>.books.some(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">                            <span class="keyword">if</span>(item.bid === <span class="keyword">this</span>.bid) &#123;</span></span><br><span class="line"><span class="actionscript">                                item.bname = <span class="keyword">this</span>.bname;</span></span><br><span class="line"><span class="actionscript">                                <span class="comment">// 终止遍历</span></span></span><br><span class="line"><span class="actionscript">                                <span class="keyword">return</span> <span class="literal">true</span>;</span></span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;)</span><br><span class="line"><span class="actionscript">                        <span class="keyword">this</span>.bidFlag = <span class="literal">false</span>;</span></span><br><span class="line"><span class="actionscript">                    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="actionscript">                        <span class="comment">// 添加图书</span></span></span><br><span class="line"><span class="actionscript">                        <span class="keyword">var</span> book = &#123;&#125;;</span></span><br><span class="line"><span class="actionscript">                        book.bid = <span class="keyword">this</span>.bid;</span></span><br><span class="line"><span class="actionscript">                        book.bname = <span class="keyword">this</span>.bname;</span></span><br><span class="line"><span class="actionscript">                        book.date = <span class="string">""</span>;</span></span><br><span class="line"><span class="actionscript">                        <span class="keyword">this</span>.books.push(book);</span></span><br><span class="line">                    &#125;  </span><br><span class="line"><span class="actionscript">                    <span class="keyword">this</span>.bid = <span class="string">""</span>;</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">this</span>.bname = <span class="string">""</span>;</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="actionscript">                edit: <span class="function"><span class="keyword">function</span><span class="params">(bid)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                    book = <span class="keyword">this</span>.books.filter(<span class="function"><span class="params">item</span> =&gt;</span> item.bid === bid)[<span class="number">0</span>];</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">this</span>.bid = book.bid;</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">this</span>.bname = book.bname;</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">this</span>.bidFlag = <span class="literal">true</span>;</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="actionscript">                remove: <span class="function"><span class="keyword">function</span><span class="params">(bid)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">var</span> idx = <span class="keyword">this</span>.books.findIndex(<span class="function"><span class="params">item</span> =&gt;</span> bid === item.bid);</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">this</span>.books.splice(idx, <span class="number">1</span>);</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line"><span class="actionscript">            <span class="comment">// 计算属性</span></span></span><br><span class="line">            computed: &#123;</span><br><span class="line"><span class="actionscript">                bookCnt: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">return</span> <span class="keyword">this</span>.books.length;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line"><span class="actionscript">            <span class="comment">// 侦听器</span></span></span><br><span class="line">            watch: &#123;</span><br><span class="line"><span class="actionscript">                <span class="comment">// 检测输入的id是否有重复</span></span></span><br><span class="line"><span class="actionscript">                bid: <span class="function"><span class="keyword">function</span><span class="params">(newBid)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">var</span> exist = <span class="keyword">this</span>.books.some(<span class="function"><span class="params">item</span> =&gt;</span> item.bid === <span class="built_in">parseInt</span>(newBid));</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(exist);</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">if</span>(exist &amp;&amp; !<span class="keyword">this</span>.bidFlag) &#123;</span></span><br><span class="line"><span class="actionscript">                        <span class="keyword">this</span>.addFlag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="actionscript">                    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="actionscript">                        <span class="keyword">this</span>.addFlag = <span class="literal">false</span>;</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line"><span class="actionscript">            <span class="comment">// 生命周期钩子函数</span></span></span><br><span class="line"><span class="actionscript">            mounted: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="comment">// mounted一旦被触发，模版就已经可用了</span></span></span><br><span class="line"><span class="actionscript">                <span class="comment">// 此时一般从后台获取数据，先填充</span></span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> data = [&#123;</span></span><br><span class="line">                        bid: 1,</span><br><span class="line"><span class="actionscript">                        bname: <span class="string">"三国演义"</span>,</span></span><br><span class="line">                        date: 2525609975000</span><br><span class="line">                    &#125;];</span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.books = data;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -215,257 +329,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/14/Vue02%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/13/Vue01%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-03-13T11:54:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/13/Vue01%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue01模版语法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/13/Vue01%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%95/">Vue01模版语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#preview"><span class="toc-number">1.</span> <span class="toc-text">preview</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#表单操作"><span class="toc-number">2.</span> <span class="toc-text">表单操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#表单域修饰符"><span class="toc-number">2.1.</span> <span class="toc-text">表单域修饰符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自定义指令"><span class="toc-number">3.</span> <span class="toc-text">自定义指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#钩子函数"><span class="toc-number">3.1.</span> <span class="toc-text">钩子函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#钩子函数参数"><span class="toc-number">3.1.1.</span> <span class="toc-text">钩子函数参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#带参数的自定义指令"><span class="toc-number">3.2.</span> <span class="toc-text">带参数的自定义指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#局部指令"><span class="toc-number">3.3.</span> <span class="toc-text">局部指令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#计算属性"><span class="toc-number">4.</span> <span class="toc-text">计算属性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#场景"><span class="toc-number">4.1.</span> <span class="toc-text">场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算属性的用法"><span class="toc-number">4.2.</span> <span class="toc-text">计算属性的用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算属性与方法的区别"><span class="toc-number">4.3.</span> <span class="toc-text">计算属性与方法的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#侦听器"><span class="toc-number">5.</span> <span class="toc-text">侦听器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#侦听起的应用场景"><span class="toc-number">5.1.</span> <span class="toc-text">侦听起的应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#侦听器的用法"><span class="toc-number">5.2.</span> <span class="toc-text">侦听器的用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#过滤器"><span class="toc-number">6.</span> <span class="toc-text">过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">6.1.</span> <span class="toc-text">自定义过滤器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在绑定属性的时候使用过滤器"><span class="toc-number">6.2.</span> <span class="toc-text">在绑定属性的时候使用过滤器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#局部过滤器"><span class="toc-number">6.3.</span> <span class="toc-text">局部过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#带参数的过滤器"><span class="toc-number">6.3.1.</span> <span class="toc-text">带参数的过滤器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#生命周期"><span class="toc-number">7.</span> <span class="toc-text">生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#主要阶段（生命周期钩子）"><span class="toc-number">7.1.</span> <span class="toc-text">主要阶段（生命周期钩子）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数组相关API"><span class="toc-number">8.</span> <span class="toc-text">数组相关API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#变异方法（修改原数据）"><span class="toc-number">8.1.</span> <span class="toc-text">变异方法（修改原数据）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换数组（生成新的数组）"><span class="toc-number">8.2.</span> <span class="toc-text">替换数组（生成新的数组）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组的响应式变化API"><span class="toc-number">8.3.</span> <span class="toc-text">数组的响应式变化API</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#案例"><span class="toc-number">9.</span> <span class="toc-text">案例</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/10/02Ajax%E6%89%A9%E5%B1%95/" class="archive-article-date">
-  	<time datetime="2020-03-09T16:59:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/10/02Ajax%E6%89%A9%E5%B1%95/">02Ajax扩展</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ajax</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/08/01Ajax%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2020-03-07T17:20:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/08/01Ajax%E5%9F%BA%E7%A1%80/">01Ajax基础</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ajax</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/07/%E7%94%A8express-js%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  	<time datetime="2020-03-07T12:35:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/07/%E7%94%A8express-js%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/">用express.js实现简单的博客系统</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">express</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/07/express-js%E6%A1%86%E6%9E%B6/" class="archive-article-date">
-  	<time datetime="2020-03-07T12:23:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/07/express-js%E6%A1%86%E6%9E%B6/">express.js框架</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">express</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -488,8 +464,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
