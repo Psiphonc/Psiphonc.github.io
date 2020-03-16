@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Psiphonc&#39;s blog</title>
+  <title>Vue04前后端交互 | Psiphonc&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Psiphonc&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="PREVIEW 前后端交互方式回顾 Promise回顾 fetch axios async&#x2F;await回顾 案例：图书管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue04前后端交互">
+<meta property="og:url" content="http://yoursite.com/2020/03/16/Vue04%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/index.html">
 <meta property="og:site_name" content="Psiphonc&#39;s blog">
+<meta property="og:description" content="PREVIEW 前后端交互方式回顾 Promise回顾 fetch axios async&#x2F;await回顾 案例：图书管理">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-16T15:23:22.000Z">
+<meta property="article:modified_time" content="2020-03-16T15:28:53.845Z">
 <meta property="article:author" content="psiphonc">
+<meta property="article:tag" content="front-end">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Psiphonc&#39;s blog" type="application/atom+xml">
@@ -166,36 +173,222 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Vue04前后端交互" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Vue04前后端交互
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/16/Vue04%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/" class="archive-article-date">
+
+        
+        <a href="/2020/03/16/Vue04%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/" class="archive-article-date">
   	<time datetime="2020-03-16T15:23:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/16/Vue04%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/">Vue04前后端交互</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="PREVIEW"><a href="#PREVIEW" class="headerlink" title="PREVIEW"></a>PREVIEW</h1><ul>
+<li>前后端交互方式回顾</li>
+<li>Promise回顾</li>
+<li>fetch</li>
+<li>axios</li>
+<li>async/await回顾</li>
+<li>案例：图书管理</li>
+</ul>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<h1 id="前后端交互模式"><a href="#前后端交互模式" class="headerlink" title="前后端交互模式"></a>前后端交互模式</h1><h2 id="接口调用方式"><a href="#接口调用方式" class="headerlink" title="接口调用方式"></a>接口调用方式</h2><ul>
+<li>原生 Ajax</li>
+<li>基于 jQuery 的 ajax</li>
+<li>fetch</li>
+<li>axios</li>
+</ul>
+<h2 id="URL-地址格式"><a href="#URL-地址格式" class="headerlink" title="URL 地址格式"></a>URL 地址格式</h2><ol>
+<li>传统形式的 URL<ul>
+<li>格式：schema://host:port?path?query#fragament<ul>
+<li>schema：协议</li>
+<li>host：主机（ip 或者域名）</li>
+<li>port：端口</li>
+<li>path：路径</li>
+<li>query：查询参数 例如 uname=tom&amp;age=12</li>
+<li>fragment：锚点，就是元素的 id，用来定位页面的某个元素</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Restful 形式的 URL<ul>
+<li>HTTP 请求方式<ul>
+<li>GET 查询</li>
+<li>POST 添加</li>
+<li>PUT 修改</li>
+<li>DELETE 删除</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Promise-回顾"><a href="#Promise-回顾" class="headerlink" title="Promise 回顾"></a>Promise 回顾</h1><p>ES6 中针对异步编程引入的，目的是把异步 API 的执行结果拿到回调函数外面处理，以避免<a href="https://en.wikipedia.org/wiki/Synchronization_(computer_science)" target="_blank" rel="noopener">同步问题</a>中的<a href="http://callbackhell.com/" target="_blank" rel="noopener">回调地狱</a></p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><ul>
+<li>通过 resove(result)将成功结果传出，通过 reject 把失败结果传出</li>
+<li>Promise.then( result =&gt; { // do something}).catch( error =&gt; { // do something})<ul>
+<li>得到成功结果会调用 then 函数，否则调用 catch 函数</li>
+<li>允许链式编程<ul>
+<li>其中，then 中函数的返回值有两种情况<ul>
+<li>返回 Promise 实例对象：返回的该实例对象会调用下一个 then</li>
+<li>返回普通值：这个值会直接传递给下一个 then</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Promise.finnally()<ul>
+<li>无论是否成功都会执行</li>
+<li>尚且不是正式的 js 标准</li>
+</ul>
+</li>
+</ul>
+<p>例子：用 Promise 解决三个文件顺序打开的同步问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="comment">// RF表示Read File</span></span><br><span class="line"><span class="keyword">let</span> getRFPromise = <span class="function"><span class="params">path</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">result, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    fs.readFile(</span><br><span class="line">      path,</span><br><span class="line">      <span class="string">"utf8"</span>,</span><br><span class="line">      (error,</span><br><span class="line">      result =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">          reject(err);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          resove(result);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    );</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line">getRFPromise(<span class="string">"1.txt"</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">    <span class="keyword">return</span> getRFPromise(<span class="string">"2.txt"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">    <span class="keyword">return</span> getRFPromise(<span class="string">"3.txt"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>例子：使用 Promise 处理原生 Ajax 请求</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">queryData</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">reslove, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    xhr.addEventListener(<span class="string">"load"</span>, result =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">        reslove(xhr.responseText);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(<span class="string">"Bad Request"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    xhr.open(<span class="string">"get"</span>, url);</span><br><span class="line">    xhr.send(<span class="literal">null</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line">queryData(<span class="string">"http://localhost:3000/data"</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> textBox = <span class="built_in">document</span>.querySelector(<span class="string">"#textBox"</span>);</span><br><span class="line">    textBox.innerHTML = result;</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">    textBox.innerHTML = error;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Promise-常用的-API"><a href="#Promise-常用的-API" class="headerlink" title="Promise 常用的 API"></a>Promise 常用的 API</h2><ul>
+<li>对象方法<ul>
+<li>Promise.all([p1, p2, p3…]) 并发处理多个异步任务，所有任务都执行完成才得到结果<ul>
+<li>所有结果都会得到，所以 then 参数接收到一个数组，顺序与传入的数组顺序一致</li>
+</ul>
+</li>
+<li>Promise.race([p1, p2, p3…]) 并发处理多个异步任务，只要有一个任务完成就可以得到结果<ul>
+<li>只能得到最先完成的那个任务的结果，then 中只需要一个参数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h1><p>基于 Promise 实现，是 xhr 的升级版，更加简单</p>
+<h2 id="语法结构"><a href="#语法结构" class="headerlink" title="语法结构"></a>语法结构</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fetch(url).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// data.text()是fetch API的一部分 返回值是一个Promise对象</span></span><br><span class="line">    <span class="keyword">return</span> data.text();</span><br><span class="line">&#125;).then(<span class="function"><span class="params">ret</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(ret);</span><br><span class="line">&#125;)...</span><br></pre></td></tr></table></figure>
+
+<h2 id="fetch-请求参数"><a href="#fetch-请求参数" class="headerlink" title="fetch 请求参数"></a>fetch 请求参数</h2><ul>
+<li>常用配置选项<ul>
+<li>method(String): HTTP 请求方法，默认为 GET，可以是 GET、POST、PUT 和 DELETE 之一<ul>
+<li>如果是 POST 或者 PUT，需要通过 body 来传递实际数据</li>
+</ul>
+</li>
+<li>body(String): HTTP 的请求参数</li>
+<li>header(Object): HTTP 请求头，默认为空对象{}</li>
+</ul>
+</li>
+</ul>
+<h3 id="GET-方式"><a href="#GET-方式" class="headerlink" title="GET 方式"></a>GET 方式</h3><ul>
+<li>传统<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">"http://localhost:3000/books?id=123"</span>, &#123;</span><br><span class="line">  method: <span class="string">"GET"</span></span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> data.text())</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">    textBox = <span class="built_in">document</span>.querySelector(<span class="string">"#textBox"</span>);</span><br><span class="line">    textBox.innerHTML = result;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></li>
+<li>RESTIful<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">"http://localhost:3000/books/456"</span>, &#123;</span><br><span class="line">  method: <span class="string">"GET"</span></span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> data.text())</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">    textBox = <span class="built_in">document</span>.querySelector(<span class="string">"#textBox"</span>);</span><br><span class="line">    textBox.innerHTML = result;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="DELETE-方式"><a href="#DELETE-方式" class="headerlink" title="DELETE 方式"></a>DELETE 方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">"http://localhost:3000/books/456"</span>, &#123;</span><br><span class="line">  method: <span class="string">"DELETE"</span></span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> data.text())</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">    textBox = <span class="built_in">document</span>.querySelector(<span class="string">"#textBox"</span>);</span><br><span class="line">    textBox.innerHTML = result;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="POST-方式"><a href="#POST-方式" class="headerlink" title="POST 方式"></a>POST 方式</h3><ul>
+<li>字符串数据<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">"http://localhost:3000/books"</span>, &#123;</span><br><span class="line">  method: <span class="string">"POST"</span>,</span><br><span class="line">  body: <span class="string">"uname=123&amp;pwd=456"</span>,</span><br><span class="line">  <span class="comment">// 请求头必须配置</span></span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="string">"Content-Type"</span>: <span class="string">"application/x-www-form-urlencoded"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> data.text())</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">    textBox = <span class="built_in">document</span>.querySelector(<span class="string">"#textBox"</span>);</span><br><span class="line">    textBox.innerHTML = result;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></li>
+<li>JSON 数据<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">"http://localhost:3000/books"</span>, &#123;</span><br><span class="line">method: <span class="string">"POST"</span>,</span><br><span class="line">body: <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">    uname: <span class="string">"123"</span>,</span><br><span class="line">    pwd: <span class="string">"456"</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 请求头必须配置</span></span><br><span class="line">headers: &#123;</span><br><span class="line">    <span class="string">"Content-Type"</span>: <span class="string">"application/x-www-form-urlencoded"</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="params">data</span> =&gt;</span> data.text())</span><br><span class="line">.then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">    textBox = <span class="built_in">document</span>.querySelector(<span class="string">"#textBox"</span>);</span><br><span class="line">    textBox.innerHTML = result;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="PUT-方式"><a href="#PUT-方式" class="headerlink" title="PUT 方式"></a>PUT 方式</h3><p>就是改一下 POST 里的 method，改成 PUT，别的一模一样</p>
+<h2 id="fetch-响应结果"><a href="#fetch-响应结果" class="headerlink" title="fetch 响应结果"></a>fetch 响应结果</h2><ul>
+<li>响应数据格式<ul>
+<li>text(): 将返回结果处理成字符串类型</li>
+<li>json(): 将返回结果处理成对象，和 JSON.parse(xhr.responseText)效果一样<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">"http://localhost:3000/json"</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> data.json)</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result.uname));</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h1><p><a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a>是一个第三方的库，基于 Promise 用于浏览器和 node.js 的 HTTP 客户端</p>
+<ul>
+<li>支持浏览器和 node.js</li>
+<li>支持 Promise</li>
+<li>能拦截请求和响应</li>
+<li>自动转换 JSON 数据</li>
+</ul>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">"/data"</span>).then(<span class="function"><span class="params">ret</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// data属性名称是固定的，用于获取后台响应的数据</span></span><br><span class="line">  <span class="built_in">console</span>.log(ret.data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用的-API"><a href="#常用的-API" class="headerlink" title="常用的 API"></a>常用的 API</h2><ul>
+<li><p>get</p>
+<ul>
+<li><p>通过 URL 传递参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">"/adata?id=123"</span>).then(<span class="function"><span class="params">ret</span> =&gt;</span> <span class="built_in">console</span>.log(ret.data));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>RESTIful</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">"/adata/123"</span>).then(<span class="function"><span class="params">ret</span> =&gt;</span> <span class="built_in">console</span>.log(ret.data));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过 params 选项传递参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">axios</span><br><span class="line">  .get(<span class="string">"/adata"</span>, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">      id: <span class="number">123</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">ret</span> =&gt;</span> <span class="built_in">console</span>.log(ret.data));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>delete</p>
+<ul>
+<li>和 get 差不多也是三种，就是方法名变成了 delete</li>
+</ul>
+</li>
+<li><p>post</p>
+<ul>
+<li>默认传递的是 JSON 格式的数据<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">axios</span><br><span class="line">  .post(<span class="string">"/adata"</span>, &#123;</span><br><span class="line">    uname: <span class="string">"Tom"</span>,</span><br><span class="line">    pwd: <span class="string">"123"</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">ret</span> =&gt;</span> <span class="built_in">console</span>.log(ret.data));</span><br></pre></td></tr></table></figure></li>
+<li>(表单)通过 URLSearchParams 传递(application/x-www-form-urlencoded)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> params = <span class="keyword">new</span> URLSearchParams();</span><br><span class="line">params.append(<span class="string">"param1"</span>, <span class="string">"value1"</span>);</span><br><span class="line">params.append(<span class="string">"param2"</span>, <span class="string">"value2"</span>);</span><br><span class="line">axios.post(<span class="string">"/api/test"</span>, params).then(<span class="function"><span class="params">ret</span> =&gt;</span> <span class="built_in">console</span>.log(ret.data));</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>put</p>
+<ul>
+<li>和 post 差不多 不赘述了 看后面的案例</li>
+</ul>
+</li>
+</ul>
+<h2 id="axios-的响应结果"><a href="#axios-的响应结果" class="headerlink" title="axios 的响应结果"></a>axios 的响应结果</h2><ul>
+<li>data：实际响应回来的数据</li>
+<li>headers：响应头信息</li>
+<li>status：响应状态码</li>
+<li>statusText：响应状态信息</li>
+</ul>
+<h2 id="axios-全局配置"><a href="#axios-全局配置" class="headerlink" title="axios 全局配置"></a>axios 全局配置</h2><ul>
+<li>axios.defaults.timeout = 300; // 超时事件</li>
+<li>axios.defaults.baseURL = “<a href="http://localhost:3000/app&quot;" target="_blank" rel="noopener">http://localhost:3000/app&quot;</a> // 默认地址</li>
+<li>axios.defaults.headers[“mytoken”] = “tokeninfo” // 设置请求头</li>
+</ul>
+<h2 id="axios-拦截器"><a href="#axios-拦截器" class="headerlink" title="axios 拦截器"></a>axios 拦截器</h2><ul>
+<li>请求拦截器<br>在请求发送之前设置一些信息<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">axios.interceptors.request.use( <span class="function"><span class="keyword">function</span>(<span class="params">config</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 在请求发送之前进行一些信息设置</span></span><br><span class="line">    <span class="built_in">console</span>.log(config.url);</span><br><span class="line">    config.headers.mytoken = <span class="string">"hello"</span>;</span><br><span class="line">    <span class="keyword">return</span> config;</span><br><span class="line">&#125;<span class="function">.<span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 处理响应的错误信息</span></span><br><span class="line">&#125;);</span><br><span class="line">axios.get(<span class="string">"http://localhost:3000/adata"</span>).then( <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<li>响应拦截器<br>在获取数据之前对数据做一些加工处理<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">axios.interceptors.response.use( <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 在请求发送之前进行一些信息设置</span></span><br><span class="line">    <span class="keyword">var</span> data = res.data;</span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line">&#125;<span class="function">.<span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 处理响应的错误信息</span></span><br><span class="line">&#125;);</span><br><span class="line">axios.get(<span class="string">"http://localhost:3000/adata"</span>).then( <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="async-await-复习"><a href="#async-await-复习" class="headerlink" title="async/await 复习"></a>async/await 复习</h1><ul>
+<li>这事 ES7 中引入的新语法</li>
+<li>async 关键字用在函数上，这个函数的返回值是一个新的 Promise 的实例对象<ul>
+<li>所以在 async 函数有返回值时，还需要用 then 来得到返回值</li>
+</ul>
+</li>
+<li>await 关键字只能用在 async 函数中，可以停下当前代码，等待异步函数的执行完成，拿到结果后再往下执行</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">queryData</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> ret = <span class="keyword">await</span> axios.get(<span class="string">"http://localhost:3000/data/1234"</span>);</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line">queryData().then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) =&gt; </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="案例：图书管理"><a href="#案例：图书管理" class="headerlink" title="案例：图书管理"></a>案例：图书管理</h1><p><a href="https://github.com/Psiphonc/library-axios-demo" target="_blank" rel="noopener">Github</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -215,349 +408,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/16/Vue04%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/16/Vue03%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2020-03-15T16:59:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/16/Vue03%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue03组件化开发</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/16/Vue03%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/">Vue03组件化开发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PREVIEW"><span class="toc-number">1.</span> <span class="toc-text">PREVIEW</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前后端交互模式"><span class="toc-number">2.</span> <span class="toc-text">前后端交互模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#接口调用方式"><span class="toc-number">2.1.</span> <span class="toc-text">接口调用方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URL-地址格式"><span class="toc-number">2.2.</span> <span class="toc-text">URL 地址格式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Promise-回顾"><span class="toc-number">3.</span> <span class="toc-text">Promise 回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-number">3.1.</span> <span class="toc-text">用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-常用的-API"><span class="toc-number">3.2.</span> <span class="toc-text">Promise 常用的 API</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fetch"><span class="toc-number">4.</span> <span class="toc-text">fetch</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法结构"><span class="toc-number">4.1.</span> <span class="toc-text">语法结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fetch-请求参数"><span class="toc-number">4.2.</span> <span class="toc-text">fetch 请求参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GET-方式"><span class="toc-number">4.2.1.</span> <span class="toc-text">GET 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DELETE-方式"><span class="toc-number">4.2.2.</span> <span class="toc-text">DELETE 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#POST-方式"><span class="toc-number">4.2.3.</span> <span class="toc-text">POST 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PUT-方式"><span class="toc-number">4.2.4.</span> <span class="toc-text">PUT 方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fetch-响应结果"><span class="toc-number">4.3.</span> <span class="toc-text">fetch 响应结果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#axios"><span class="toc-number">5.</span> <span class="toc-text">axios</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本用法"><span class="toc-number">5.1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的-API"><span class="toc-number">5.2.</span> <span class="toc-text">常用的 API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios-的响应结果"><span class="toc-number">5.3.</span> <span class="toc-text">axios 的响应结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios-全局配置"><span class="toc-number">5.4.</span> <span class="toc-text">axios 全局配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios-拦截器"><span class="toc-number">5.5.</span> <span class="toc-text">axios 拦截器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#async-await-复习"><span class="toc-number">6.</span> <span class="toc-text">async&#x2F;await 复习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#案例：图书管理"><span class="toc-number">7.</span> <span class="toc-text">案例：图书管理</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/14/Vue02%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2020-03-14T12:16:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-14</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/14/Vue02%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/">Vue02常用特性</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/13/Vue01%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-03-13T11:54:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/13/Vue01%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%95/">Vue01模版语法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/10/02Ajax%E6%89%A9%E5%B1%95/" class="archive-article-date">
-  	<time datetime="2020-03-09T16:59:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/10/02Ajax%E6%89%A9%E5%B1%95/">02Ajax扩展</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ajax</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/08/01Ajax%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2020-03-07T17:20:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/08/01Ajax%E5%9F%BA%E7%A1%80/">01Ajax基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ajax</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/07/%E7%94%A8express-js%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  	<time datetime="2020-03-07T12:35:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/07/%E7%94%A8express-js%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/">用express.js实现简单的博客系统</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">express</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/07/express-js%E6%A1%86%E6%9E%B6/" class="archive-article-date">
-  	<time datetime="2020-03-07T12:23:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/07/express-js%E6%A1%86%E6%9E%B6/">express.js框架</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">express</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -580,8 +543,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
