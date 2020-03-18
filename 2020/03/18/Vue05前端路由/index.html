@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Psiphonc&#39;s blog</title>
+  <title>Vue05前端路由 | Psiphonc&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Psiphonc&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="PREVIEW 重新解释一下路由的概念 Vue-Router的基本使用 路由重定向 嵌套路由 动态路由匹配 命名路由 函数式导航 案例：后台管理页面的导航">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue05前端路由">
+<meta property="og:url" content="http://yoursite.com/2020/03/18/Vue05%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1/index.html">
 <meta property="og:site_name" content="Psiphonc&#39;s blog">
+<meta property="og:description" content="PREVIEW 重新解释一下路由的概念 Vue-Router的基本使用 路由重定向 嵌套路由 动态路由匹配 命名路由 函数式导航 案例：后台管理页面的导航">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/03/18/Vue05%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1/%E5%90%8E%E7%AB%AF%E8%B7%AF%E7%94%B1.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/18/Vue05%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1/%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/18/Vue05%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1/%E8%B7%AF%E7%94%B1%E5%B5%8C%E5%A5%97.png">
+<meta property="article:published_time" content="2020-03-18T14:22:05.000Z">
+<meta property="article:modified_time" content="2020-03-18T14:27:04.355Z">
 <meta property="article:author" content="psiphonc">
+<meta property="article:tag" content="front-end">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/03/18/Vue05%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1/%E5%90%8E%E7%AB%AF%E8%B7%AF%E7%94%B1.png">
   
     <link rel="alternative" href="/atom.xml" title="Psiphonc&#39;s blog" type="application/atom+xml">
   
@@ -166,36 +177,185 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Vue05前端路由" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Vue05前端路由
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/18/Vue05%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1/" class="archive-article-date">
+
+        
+        <a href="/2020/03/18/Vue05%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1/" class="archive-article-date">
   	<time datetime="2020-03-18T14:22:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/18/Vue05%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1/">Vue05前端路由</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="PREVIEW"><a href="#PREVIEW" class="headerlink" title="PREVIEW"></a>PREVIEW</h1><ul>
+<li>重新解释一下路由的概念</li>
+<li>Vue-Router的基本使用</li>
+<li>路由重定向</li>
+<li>嵌套路由</li>
+<li>动态路由匹配</li>
+<li>命名路由</li>
+<li>函数式导航</li>
+<li>案例：后台管理页面的导航</li>
+</ul>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><p>路由的本质就是对应关系，把不同的路径映射到不同的文件上</p>
+<h2 id="后端路由"><a href="#后端路由" class="headerlink" title="后端路由"></a>后端路由</h2><p>根据不同的URL请求，服务器返回不同的内容。所以后端路由就是URL请求地址和服务器资源之间的对应关系<br><img src="%E5%90%8E%E7%AB%AF%E8%B7%AF%E7%94%B1.png" alt="后端路由"></p>
+<h2 id="SPA的发展"><a href="#SPA的发展" class="headerlink" title="SPA的发展"></a>SPA的发展</h2><ol>
+<li>后端渲染存在性能问题，即如果用户与服务器之间经常提交表单，则页面需要频繁的刷新</li>
+<li>Ajax前端渲染，浏览器通过Ajax向服务器请求数据后，由前端模版渲染到页面，避免了刷新，但是不支持浏览器的前进后退等操作</li>
+<li>SPA技术里整个网站只有一个页面，内容变化依然通过Ajax技术局部更新，同时也支持浏览器的前进与后退<ul>
+<li>前端路由是SPA在实现过程中最核心的技术点</li>
+<li>最基本的实现前端路由的方法是基于URL地址中的hash值（锚链接），hash的变化会导致浏览器记录访问历史的变化，但hash的变化并不触发新的URL请求</li>
+</ul>
+</li>
+</ol>
+<h2 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h2><p>根据不同的用户事件，显示不同的页面内容。本质上前端路由就是用户事件与事件处理函数之间的对应关系<br><img src="%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1.png" alt="前端路由"></p>
+<h3 id="component组件"><a href="#component组件" class="headerlink" title="component组件"></a>component组件</h3><p>vue内置的组件，起到一个类似占位符的作用，先为is所绑定的组件占一个位置，到时候根据is属性的值显示不同的组件</p>
+<h3 id="实现简单的前端路由"><a href="#实现简单的前端路由" class="headerlink" title="实现简单的前端路由"></a>实现简单的前端路由</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/index"</span>&gt;</span>主页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/tech"</span>&gt;</span>科技<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/finance"</span>&gt;</span>财经<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/entertainment"</span>&gt;</span>娱乐<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"comName"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> index = &#123;</span><br><span class="line">    template: <span class="string">"&lt;h1&gt;主页信息&lt;/h1&gt;"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> tech = &#123;</span><br><span class="line">    template: <span class="string">"&lt;h1&gt;科技信息&lt;/h1&gt;"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> finance = &#123;</span><br><span class="line">    template: <span class="string">"&lt;h1&gt;财经信息&lt;/h1&gt;"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> entertainment = &#123;</span><br><span class="line">    template: <span class="string">"&lt;h1&gt;娱乐信息&lt;/h1&gt;"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">"#app"</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        comName: <span class="string">"index"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    components: &#123;</span><br><span class="line">        index,</span><br><span class="line">        tech,</span><br><span class="line">        finance,</span><br><span class="line">        entertainment</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"hashchange"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    vm.comName = location.hash.slice(<span class="number">2</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="Vue-Router"><a href="#Vue-Router" class="headerlink" title="Vue-Router"></a>Vue-Router</h1><ul>
+<li>支持HTML5历史模式或hash模式</li>
+<li>支持嵌套路由</li>
+<li>支持路由参数</li>
+<li>支持编程式路由</li>
+<li>支持命名路由</li>
+</ul>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ol>
+<li><p>引入相关的库文件</p>
+<ul>
+<li>必须先引入Vue的库文件再引入Vue-Router </li>
+</ul>
+</li>
+<li><p>添加路由链接</p>
+<ul>
+<li><p><router-link>标签是vue内置标签，默认被渲染为a标签 to属性被渲染为href属性 to的值会被渲染为#开头的hash地址</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/user"</span>&gt;</span>User<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>添加路由填充位</p>
+<ul>
+<li><p>将来通过路由规则匹配到的组件，将会被渲染到router-view所在的位置 (起一个占位符的作用)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>定义路由组件</p>
+</li>
+<li><p>配置路由规则并创建路由实例</p>
+</li>
+<li><p>把路由挂在到Vue根实例中</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/user"</span>&gt;</span>User<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/register"</span>&gt;</span>Register<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 路由填充位 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> User = &#123;</span><br><span class="line">    template: <span class="string">"&lt;h1&gt;User组件&lt;/h1&gt;"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> Register = &#123;</span><br><span class="line">    template: <span class="string">"&lt;h1&gt;Register组件&lt;/h1&gt;"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 创建路由实例对象</span></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    <span class="comment">// 所有的路由规则 (注意 这里是动词routes 而不是名词router)</span></span><br><span class="line">    routes: [</span><br><span class="line">        <span class="comment">// 1. router-link里的to属性是什么 path就要写什么</span></span><br><span class="line">        <span class="comment">// 2. component接收嘴贱对象，而不是字符串</span></span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">"/user"</span>, <span class="attr">component</span>: User &#125;,</span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">"/register"</span>, <span class="attr">component</span>: Register &#125;</span><br><span class="line">]</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">"#app"</span>,</span><br><span class="line">    data: &#123;&#125;,</span><br><span class="line">    <span class="comment">// 把路由挂载到Vue根实例对象中</span></span><br><span class="line">    router</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="路由重定向"><a href="#路由重定向" class="headerlink" title="路由重定向"></a>路由重定向</h2><p>用户在访问地址A的时候强制用户跳转到地址C从而展示特定的组件页面</p>
+<ul>
+<li>通过路由规则的redirect实行，指定一个新的路由地址</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    routes: [</span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">"/"</span>, <span class="attr">redirect</span>: <span class="string">"/user"</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">"/user"</span>, <span class="attr">component</span>: User &#125;,</span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">"/register"</span>, <span class="attr">component</span>: Register &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h2><ul>
+<li>由父级路由链接显示模版内容</li>
+<li>模版内容中又有子级路由链接</li>
+<li>点击子级路由链接显示子级模版内容<br><img src="%E8%B7%AF%E7%94%B1%E5%B5%8C%E5%A5%97.png" alt="路由嵌套"><br>在父级路由register中又嵌套了两个子级路由tab</li>
+</ul>
+<h3 id="嵌套路由用法"><a href="#嵌套路由用法" class="headerlink" title="嵌套路由用法"></a>嵌套路由用法</h3><ol>
+<li><p>改造父组件的template，为其添加子路由链接和路由占位符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Register = &#123;</span><br><span class="line">    template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;template&gt;</span></span><br><span class="line"><span class="string">      &lt;h1&gt;Register组件&lt;/h1&gt;</span></span><br><span class="line"><span class="string">      &lt;hr /&gt;</span></span><br><span class="line"><span class="string">      &lt;router-link to="/register/tab1"&gt;Tab1&lt;/router-link&gt;</span></span><br><span class="line"><span class="string">      &lt;router-link to="/register/tab2"&gt;Tab2&lt;/router-link&gt;</span></span><br><span class="line"><span class="string">    &lt;/template&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过children属性配置子级路由</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">"/"</span>, <span class="attr">redirect</span>: <span class="string">"/user"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">"/user"</span>, <span class="attr">component</span>: User &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">"/register"</span>,</span><br><span class="line">      component: Register,</span><br><span class="line">      <span class="comment">// 通过children属性，为/register添加子理由规则</span></span><br><span class="line">      children: [</span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">"/register/tab1"</span>, <span class="attr">component</span>: Tab1 &#125;,</span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">"/register/tab2"</span>, <span class="attr">component</span>: Tab2 &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="动态路由匹配"><a href="#动态路由匹配" class="headerlink" title="动态路由匹配"></a>动态路由匹配</h2><p>通过动态路由参数的模式进行路由匹配</p>
+<ul>
+<li><p>父组件模版中传递路由参数</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/user/1"</span>&gt;</span>User1<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/user/2"</span>&gt;</span>User2<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/user/3"</span>&gt;</span>User3<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在路由对象中使用:参数名进行接收</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">path</span>: <span class="string">"/user/:id"</span>, <span class="attr">component</span>: User &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在子组件中使用$route.params获取路由参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> User = &#123;</span><br><span class="line">    template: <span class="string">"&lt;h1&gt;User&#123;&#123; $route.params.id &#125;&#125;组件&lt;/h1&gt;"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="props传参"><a href="#props传参" class="headerlink" title="props传参"></a>props传参</h3><p>$route与对应路由的耦合程度太高了，需要使用props将组件和路由进行解耦</p>
+<h4 id="props值为Boolean"><a href="#props值为Boolean" class="headerlink" title="props值为Boolean"></a>props值为Boolean</h4><ul>
+<li><p>在VueRouter实例对象的route属性中起开props传惨</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">path</span>: <span class="string">"/user/:id"</span>, <span class="attr">component</span>: User, <span class="attr">props</span>: <span class="literal">true</span>&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在子组件中设置props参数 然后可以直接使用了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> User = &#123;</span><br><span class="line">    props: [<span class="string">"id"</span>],</span><br><span class="line">    template: <span class="string">"&lt;h1&gt;User&#123;&#123; id &#125;&#125;组件&lt;/h1&gt;"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="props值为Object"><a href="#props值为Object" class="headerlink" title="props值为Object"></a>props值为Object</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> User = &#123; </span><br><span class="line">    props:[<span class="string">"username"</span>,<span class="string">"pwd"</span>],</span><br><span class="line">    template:<span class="string">"&lt;div&gt;用户：&#123;&#123;username&#125;&#125;---&#123;&#123;pwd&#125;&#125;&lt;/div&gt;"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myRouter = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    <span class="comment">//routes是路由规则数组</span></span><br><span class="line">    routes: [</span><br><span class="line">        <span class="comment">//通过/:参数名  的形式传递参数 </span></span><br><span class="line">        <span class="comment">//如果props设置为对象，则传递的是对象中的数据给组件</span></span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">"/user/:id"</span>, <span class="attr">component</span>: User,<span class="attr">props</span>:&#123;<span class="attr">username</span>:<span class="string">"jack"</span>,<span class="attr">pwd</span>:<span class="number">123</span>&#125; &#125;,</span><br><span class="line">        </span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>要注意：上面例子里的id即使在子组件中的props中接收了 也访问不到 只要props是对象 那么只会传对象的值</p>
+<h3 id="props值为function"><a href="#props值为function" class="headerlink" title="props值为function"></a>props值为function</h3><p>用函数传参，即可以传:id 也可以传props对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> User = &#123;</span><br><span class="line">    props: [<span class="string">"id"</span>, <span class="string">"uname"</span>, <span class="string">"age"</span>],</span><br><span class="line">    template: <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;h1&gt;User&#123;&#123; id &#125;&#125;&lt;/h1&gt;</span></span><br><span class="line"><span class="string">            &lt;div&gt;</span></span><br><span class="line"><span class="string">                name: &lt;span&gt;&#123;&#123;uname&#125;&#125;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                age: &lt;span&gt;&#123;&#123;age&#125;&#125;&lt;/span&gt;</span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 创建路由实例对象</span></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    routes: [</span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">"/"</span>, <span class="attr">redirect</span>: <span class="string">"/user"</span> &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            path: <span class="string">"/user/:id"</span>,</span><br><span class="line">            component: User,</span><br><span class="line">            <span class="comment">// 用函数传参，即可以传:id 也可以传props对象</span></span><br><span class="line">            props: <span class="function"><span class="params">route</span> =&gt;</span> (&#123; <span class="attr">uname</span>: <span class="string">"Tom"</span>, <span class="attr">age</span>: <span class="number">22</span>, <span class="attr">id</span>: route.params.id &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">"#app"</span>,</span><br><span class="line">    data: &#123;&#125;,</span><br><span class="line">    router</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a>命名路由</h2><ul>
+<li><p>为了方便表示路由的路径，可以给路由规则起一个别名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    routes: [</span><br><span class="line">        &#123; <span class="attr">path</span>: <span class="string">"/"</span>, <span class="attr">redirect</span>: <span class="string">"/user"</span> &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">"user"</span>,</span><br><span class="line">            path: <span class="string">"/user/:id"</span>,</span><br><span class="line">            component: User,</span><br><span class="line">            <span class="comment">// 用函数传参，即可以传:id 也可以传props对象</span></span><br><span class="line">            props: <span class="function"><span class="params">route</span> =&gt;</span> (&#123; <span class="attr">uname</span>: <span class="string">"Tom"</span>, <span class="attr">age</span>: <span class="number">22</span>, <span class="attr">id</span>: route.params.id &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在router-link标签中绑定一个to属性</p>
+</li>
+<li><p>to属性接收的是一个对象，用params属性传递:id参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link </span><br><span class="line">:to=<span class="string">"&#123; name: 'user', params:&#123; id: 1 &#125; &#125;"</span></span><br><span class="line">&gt;User1&lt;<span class="regexp">/router-link&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h2><ul>
+<li>声明式导航<ul>
+<li>通过点击链接的方式实现导航</li>
+<li>例如a标签和router-link标签</li>
+</ul>
+</li>
+<li>编程式导航<ul>
+<li>通过调用js的api实现导航</li>
+<li>例如location.href</li>
+</ul>
+</li>
+</ul>
+<h3 id="Vue-Router编程式导航"><a href="#Vue-Router编程式导航" class="headerlink" title="Vue-Router编程式导航"></a>Vue-Router编程式导航</h3><ul>
+<li><p>跳转：this.$router.push(“hash地址”)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> User = &#123;</span><br><span class="line">    template: <span class="string">`&lt;button @click="goRegister"&gt;跳转到注册页面&lt;/button&gt;`</span>,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        <span class="comment">// 编程式跳转</span></span><br><span class="line">        goRegister: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.$router.push(<span class="string">"/register"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>前进后退：this.$router.go(n)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Register = &#123;</span><br><span class="line">   template: <span class="string">`</span></span><br><span class="line"><span class="string">   &lt;div&gt;</span></span><br><span class="line"><span class="string">     &lt;h1&gt;Register组件&lt;/h1&gt;</span></span><br><span class="line"><span class="string">     &lt;button @click="goBack"&gt;后退&lt;/button&gt;</span></span><br><span class="line"><span class="string">   &lt;/div&gt;</span></span><br><span class="line"><span class="string">   `</span>,</span><br><span class="line">   methods: &#123;</span><br><span class="line">     <span class="comment">// 编程式返回</span></span><br><span class="line">     goBack: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.$router.go(<span class="number">-1</span>);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="push的更多哦你给发"><a href="#push的更多哦你给发" class="headerlink" title="push的更多哦你给发"></a>push的更多哦你给发</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.push(<span class="string">"/login"</span>);</span><br><span class="line"><span class="comment">// 命名路由</span></span><br><span class="line"><span class="keyword">this</span>.$router.push(&#123; <span class="attr">name</span>:<span class="string">'user'</span> , <span class="attr">params</span>: &#123;<span class="attr">id</span>:<span class="number">123</span>&#125; &#125;);</span><br><span class="line"><span class="comment">// 对象</span></span><br><span class="line"><span class="keyword">this</span>.$router.push(&#123; <span class="attr">path</span>:<span class="string">"/login"</span> &#125;);</span><br><span class="line"><span class="comment">// 带查询参数 变成/login?username=jack</span></span><br><span class="line"><span class="keyword">this</span>.$router.push(&#123; <span class="attr">path</span>:<span class="string">"/login"</span>,<span class="attr">query</span>:&#123;<span class="attr">username</span>:<span class="string">"jack"</span>&#125; &#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="案例：后台管理页面"><a href="#案例：后台管理页面" class="headerlink" title="案例：后台管理页面"></a>案例：后台管理页面</h1><p><a href="https://github.com/Psiphonc/-backstage-management-vuerouter-demo" target="_blank" rel="noopener">Github</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -215,395 +375,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/18/Vue05%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/16/Vue04%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/" class="archive-article-date">
-  	<time datetime="2020-03-16T15:23:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/16/Vue04%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue04前后端交互</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/16/Vue04%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/">Vue04前后端交互</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PREVIEW"><span class="toc-number">1.</span> <span class="toc-text">PREVIEW</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#路由"><span class="toc-number">2.</span> <span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#后端路由"><span class="toc-number">2.1.</span> <span class="toc-text">后端路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SPA的发展"><span class="toc-number">2.2.</span> <span class="toc-text">SPA的发展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端路由"><span class="toc-number">2.3.</span> <span class="toc-text">前端路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#component组件"><span class="toc-number">2.3.1.</span> <span class="toc-text">component组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现简单的前端路由"><span class="toc-number">2.3.2.</span> <span class="toc-text">实现简单的前端路由</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-Router"><span class="toc-number">3.</span> <span class="toc-text">Vue-Router</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本使用"><span class="toc-number">3.1.</span> <span class="toc-text">基本使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由重定向"><span class="toc-number">3.2.</span> <span class="toc-text">路由重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#嵌套路由"><span class="toc-number">3.3.</span> <span class="toc-text">嵌套路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#嵌套路由用法"><span class="toc-number">3.3.1.</span> <span class="toc-text">嵌套路由用法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态路由匹配"><span class="toc-number">3.4.</span> <span class="toc-text">动态路由匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#props传参"><span class="toc-number">3.4.1.</span> <span class="toc-text">props传参</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#props值为Boolean"><span class="toc-number">3.4.1.1.</span> <span class="toc-text">props值为Boolean</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#props值为Object"><span class="toc-number">3.4.1.2.</span> <span class="toc-text">props值为Object</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#props值为function"><span class="toc-number">3.4.2.</span> <span class="toc-text">props值为function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命名路由"><span class="toc-number">3.5.</span> <span class="toc-text">命名路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编程式导航"><span class="toc-number">3.6.</span> <span class="toc-text">编程式导航</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-Router编程式导航"><span class="toc-number">3.6.1.</span> <span class="toc-text">Vue-Router编程式导航</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#push的更多哦你给发"><span class="toc-number">3.6.1.1.</span> <span class="toc-text">push的更多哦你给发</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#案例：后台管理页面"><span class="toc-number">4.</span> <span class="toc-text">案例：后台管理页面</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/16/Vue03%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2020-03-15T16:59:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-16</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/16/Vue03%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/">Vue03组件化开发</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/14/Vue02%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2020-03-14T12:16:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/14/Vue02%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/">Vue02常用特性</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/13/Vue01%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-03-13T11:54:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/13/Vue01%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%95/">Vue01模版语法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/10/02Ajax%E6%89%A9%E5%B1%95/" class="archive-article-date">
-  	<time datetime="2020-03-09T16:59:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/10/02Ajax%E6%89%A9%E5%B1%95/">02Ajax扩展</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ajax</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/08/01Ajax%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2020-03-07T17:20:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/08/01Ajax%E5%9F%BA%E7%A1%80/">01Ajax基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">front-end</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ajax</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/07/%E7%94%A8express-js%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  	<time datetime="2020-03-07T12:35:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/07/%E7%94%A8express-js%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/">用express.js实现简单的博客系统</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">express</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/07/express-js%E6%A1%86%E6%9E%B6/" class="archive-article-date">
-  	<time datetime="2020-03-07T12:23:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/07/express-js%E6%A1%86%E6%9E%B6/">express.js框架</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">express</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -626,8 +510,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
