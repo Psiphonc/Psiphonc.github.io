@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>前端工程化 | Psiphonc&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="PREVIEW ES6模块化介绍 Webpack Vue单文件组件  演示用项目">
+  <meta name="description" content="PREVIEW ES6 模块化介绍 Webpack Vue 单文件组件  演示用项目">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端工程化">
 <meta property="og:url" content="http://yoursite.com/2020/03/20/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/index.html">
 <meta property="og:site_name" content="Psiphonc&#39;s blog">
-<meta property="og:description" content="PREVIEW ES6模块化介绍 Webpack Vue单文件组件  演示用项目">
+<meta property="og:description" content="PREVIEW ES6 模块化介绍 Webpack Vue 单文件组件  演示用项目">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/2020/03/20/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/%E8%BF%90%E8%A1%8Cwebpack.png">
 <meta property="og:image" content="http://yoursite.com/2020/03/20/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/%E8%BF%90%E8%A1%8Cwebpack%E5%90%8E%E7%9A%84%E7%9B%AE%E5%BD%95.png">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/03/20/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/loader%E7%9A%84%E8%B0%83%E7%94%A8%E8%BF%87%E7%A8%8B.png">
 <meta property="og:image" content="http://yoursite.com/2020/03/20/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/%E5%9B%BE%E7%89%87%E4%B8%8D%E6%89%93%E5%8C%85%E6%8A%A5%E9%94%99.png">
 <meta property="article:published_time" content="2020-03-19T16:18:42.000Z">
-<meta property="article:modified_time" content="2020-03-19T17:14:17.355Z">
+<meta property="article:modified_time" content="2020-03-19T17:16:49.760Z">
 <meta property="article:author" content="psiphonc">
 <meta property="article:tag" content="js">
 <meta property="article:tag" content="node">
@@ -201,90 +201,97 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="PREVIEW"><a href="#PREVIEW" class="headerlink" title="PREVIEW"></a>PREVIEW</h1><ul>
-<li>ES6模块化介绍</li>
+<li>ES6 模块化介绍</li>
 <li>Webpack</li>
-<li>Vue单文件组件</li>
+<li>Vue 单文件组件</li>
 </ul>
 <p><a href="https://github.com/Psiphonc/webpack-demo" target="_blank" rel="noopener">演示用项目</a></p>
 <a id="more"></a>
 
-<h1 id="ES6模块化"><a href="#ES6模块化" class="headerlink" title="ES6模块化"></a>ES6模块化</h1><h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><ul>
+<h1 id="ES6-模块化"><a href="#ES6-模块化" class="headerlink" title="ES6 模块化"></a>ES6 模块化</h1><h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><ul>
 <li>模块化就是把单独的一个功能封装到一个模块（文件）中，模块之间相互隔离，但是可以通过特定的接口公开内部成员，也可以依赖别的模块</li>
-<li>模块化开发的好处：方便代码的重用，从而提升开发效率，并且方便后期的维护<h3 id="主流的模块化规范"><a href="#主流的模块化规范" class="headerlink" title="主流的模块化规范"></a>主流的模块化规范</h3></li>
+<li>模块化开发的好处：方便代码的重用，从而提升开发效率，并且方便后期的维护</li>
+</ul>
+<h3 id="主流的模块化规范"><a href="#主流的模块化规范" class="headerlink" title="主流的模块化规范"></a>主流的模块化规范</h3><ul>
 <li>浏览器端的模块化规范<ul>
 <li>AMD：Require.js</li>
 <li>CMD：Sea.js</li>
 </ul>
 </li>
 <li>服务器端的模块化规范<ul>
-<li>CommonJS（Node笔记里有详细描述）<ul>
+<li>CommonJS（Node 笔记里有详细描述）<ul>
 <li>模块分为单文件模块和包</li>
-<li>模块成员导出：module.exports和exports</li>
+<li>模块成员导出：module.exports 和 exports</li>
 <li>模块成员导入：require(“模块标识符”)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>ES6模块化<ul>
+<li>ES6 模块化<ul>
 <li>ES6 语法规范中，在语言层面上定义了 ES6 模块化规范，是浏览器端与服务器端通用的模块化开发规范。</li>
 <li>规范<ul>
-<li>每个js都是一个独立的模块</li>
-<li>导入模块成员使用import关键字</li>
-<li>暴露模块成员使用export关键字<h2 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h2></li>
+<li>每个 js 都是一个独立的模块</li>
+<li>导入模块成员使用 import 关键字</li>
+<li>暴露模块成员使用 export 关键字</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Node不支持ES6模块化，需要通过babel这个语法转换工具把有兼容性问题的js代码转换为低版本的js代码</li>
+</ul>
+<h2 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h2><ul>
+<li>Node 不支持 ES6 模块化，需要通过 babel 这个语法转换工具把有兼容性问题的 js 代码转换为低版本的 js 代码</li>
 <li>使用步骤<ol>
-<li>安装babel <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev @babel&#x2F;core @babel&#x2F;cli @babel&#x2F;preset-env @babel&#x2F;node</span><br></pre></td></tr></table></figure></li>
-<li>安装polyfill插件 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save @babel&#x2F;polyfill</span><br></pre></td></tr></table></figure></li>
-<li>在项目根目录中创建babel配置文件babel.config.js</li>
-<li>babel.config.js里的内容入下 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> presets = [</span><br><span class="line">  [</span><br><span class="line">    <span class="string">"@babel/env"</span>,</span><br><span class="line">    &#123;</span><br><span class="line">      targets: &#123;</span><br><span class="line">        edge: <span class="string">"17"</span>,</span><br><span class="line">        firefox: <span class="string">"60"</span>,</span><br><span class="line">        chrome: <span class="string">"67"</span>,</span><br><span class="line">        safari: <span class="string">"11.1"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">];</span><br><span class="line"><span class="built_in">module</span>.exports = &#123; presets &#125;;</span><br></pre></td></tr></table></figure>
+<li>安装 babel<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev @babel&#x2F;core @babel&#x2F;cli @babel&#x2F;preset-env @babel&#x2F;node</span><br></pre></td></tr></table></figure></li>
+<li>安装 polyfill 插件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save @babel&#x2F;polyfill</span><br></pre></td></tr></table></figure></li>
+<li>在项目根目录中创建 babel 配置文件 babel.config.js</li>
+<li>babel.config.js 里的内容入下<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> presets = [</span><br><span class="line">  [</span><br><span class="line">    <span class="string">"@babel/env"</span>,</span><br><span class="line">    &#123;</span><br><span class="line">      targets: &#123;</span><br><span class="line">        edge: <span class="string">"17"</span>,</span><br><span class="line">        firefox: <span class="string">"60"</span>,</span><br><span class="line">        chrome: <span class="string">"67"</span>,</span><br><span class="line">        safari: <span class="string">"11.1"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">];</span><br><span class="line"><span class="built_in">module</span>.exports = &#123; presets &#125;;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>presets是一个配置语法转换的数组</li>
-<li>targets对象中的键值对表示转换后代码应该要兼容的浏览器版本</li>
-<li>最后要把presets数组通过module.exports暴露出去以供babel使用</li>
+<li>presets 是一个配置语法转换的数组</li>
+<li>targets 对象中的键值对表示转换后代码应该要兼容的浏览器版本</li>
+<li>最后要把 presets 数组通过 module.exports 暴露出去以供 babel 使用</li>
 </ul>
 </li>
-<li>运行代码 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx babel-node index.js</span><br></pre></td></tr></table></figure>
+<li>运行代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx babel-node index.js</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
 </li>
 </ul>
-<h2 id="ES6模块化规范"><a href="#ES6模块化规范" class="headerlink" title="ES6模块化规范"></a>ES6模块化规范</h2><h3 id="默认导出-amp-默认导入"><a href="#默认导出-amp-默认导入" class="headerlink" title="默认导出&amp;默认导入"></a>默认导出&amp;默认导入</h3><ul>
-<li>默认导出语法  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当前文件模块为m1.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义似有成员a和c</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">20</span>;</span><br><span class="line"><span class="comment">// 变量c因为没有暴露 外界是访问不到的</span></span><br><span class="line"><span class="keyword">let</span> c = <span class="number">30</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="comment">// 将本模块中的私有成员暴露出去</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  a,</span><br><span class="line">  b,</span><br><span class="line">  show</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ES6-模块化规范"><a href="#ES6-模块化规范" class="headerlink" title="ES6 模块化规范"></a>ES6 模块化规范</h2><h3 id="默认导出-amp-默认导入"><a href="#默认导出-amp-默认导入" class="headerlink" title="默认导出&amp;默认导入"></a>默认导出&amp;默认导入</h3><ul>
+<li><p>默认导出语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当前文件模块为m1.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义似有成员a和c</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">20</span>;</span><br><span class="line"><span class="comment">// 变量c因为没有暴露 外界是访问不到的</span></span><br><span class="line"><span class="keyword">let</span> c = <span class="number">30</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="comment">// 将本模块中的私有成员暴露出去</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  a,</span><br><span class="line">  b,</span><br><span class="line">  show</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>注意：一个模块<strong>只能使用一次</strong>export default</li>
 </ul>
 </li>
-<li>默认导入语法  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入模块成员</span></span><br><span class="line"><span class="keyword">import</span> m1 <span class="keyword">from</span> <span class="string">"./m1.js"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(m1);</span><br><span class="line"><span class="comment">// 输出结果：&#123; a: 10, b: 20, show: [Function: show] &#125;</span></span><br></pre></td></tr></table></figure>
+<li><p>默认导入语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入模块成员</span></span><br><span class="line"><span class="keyword">import</span> m1 <span class="keyword">from</span> <span class="string">"./m1.js"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(m1);</span><br><span class="line"><span class="comment">// 输出结果：&#123; a: 10, b: 20, show: [Function: show] &#125;</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>如果一个模块没有默认导出对象，使用import from语法会接收到一个<strong>空对象</strong></li>
+<li>如果一个模块没有默认导出对象，使用 import from 语法会接收到一个<strong>空对象</strong></li>
 </ul>
 </li>
 </ul>
 <h3 id="按需导入-amp-按需导出"><a href="#按需导入-amp-按需导出" class="headerlink" title="按需导入&amp;按需导出"></a>按需导入&amp;按需导出</h3><ul>
 <li><p>按需导入语法</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当前文件模块为m1.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 向外按需导出变量</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> s1 = <span class="string">'aaa'</span>;</span><br><span class="line"><span class="comment">// 向外按需导出方法foo</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span> = <span class="title">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当前文件模块为m1.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 向外按需导出变量</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> s1 = <span class="string">'aaa'</span>;</span><br><span class="line"><span class="comment">// 向外按需导出方法foo</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span> = <span class="title">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>注意： 一个模块里可以多次按需导出</li>
 </ul>
 </li>
 <li><p>按需导入语法</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ( s1 <span class="keyword">as</span> s, foo ) <span class="keyword">from</span> <span class="string">'./m1.js'</span></span><br><span class="line"><span class="built_in">console</span>.log(s);</span><br><span class="line"><span class="built_in">console</span>.log(foo);</span><br><span class="line"><span class="built_in">console</span>.log(s1) <span class="comment">// 报错，已经起了别名的话原来的名字就不能用了</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ( s1 <span class="keyword">as</span> s, foo ) <span class="keyword">from</span> <span class="string">'./m1.js'</span></span><br><span class="line"><span class="built_in">console</span>.log(s);</span><br><span class="line"><span class="built_in">console</span>.log(foo);</span><br><span class="line"><span class="built_in">console</span>.log(s1) <span class="comment">// 报错，已经起了别名的话原来的名字就不能用了</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>可以默认导入和按需导入合并到一起</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> m1, &#123; s1, foo &#125; <span class="keyword">from</span> <span class="string">"./m1.js"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> m1, &#123; s1, foo &#125; <span class="keyword">from</span> <span class="string">"./m1.js"</span>;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <h3 id="直接导入并执行模块中的代码"><a href="#直接导入并执行模块中的代码" class="headerlink" title="直接导入并执行模块中的代码"></a>直接导入并执行模块中的代码</h3><p>有时候我们只想但魂的执行某个模块中的代码而并不想得到模块中暴露的成员，此时可以直接导入并执行模块的代码</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当前文件为m2.js</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i  = <span class="number">0</span>; i &lt; <span class="number">3</span>; ++i) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接导入并执行模块代码</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"./m2.js"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当前文件为m2.js</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; ++i) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接导入并执行模块代码</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"./m2.js"</span>;</span><br></pre></td></tr></table></figure>
 
 <h1 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h1><h2 id="webpack-概述"><a href="#webpack-概述" class="headerlink" title="webpack 概述"></a>webpack 概述</h2><ul>
 <li>webpack 是一个流行的前端项目构建工具（打包工具），可以解决当前 web 开发中所面临的困境。</li>
@@ -434,13 +441,13 @@
 <li><p>然后删掉 dist 目录，运行 npm run build 就行了</p>
 </li>
 </ol>
-<h1 id="Vue单文件组件"><a href="#Vue单文件组件" class="headerlink" title="Vue单文件组件"></a>Vue单文件组件</h1><h2 id="传统组件的问题"><a href="#传统组件的问题" class="headerlink" title="传统组件的问题"></a>传统组件的问题</h2><ul>
+<h1 id="Vue-单文件组件"><a href="#Vue-单文件组件" class="headerlink" title="Vue 单文件组件"></a>Vue 单文件组件</h1><h2 id="传统组件的问题"><a href="#传统组件的问题" class="headerlink" title="传统组件的问题"></a>传统组件的问题</h2><ul>
 <li>全局定义的组件</li>
 <li>不能重名字符串模板缺乏语法高亮</li>
 <li>不支持 css(当 html 和 js 组件化时，css 没有参与其中)</li>
 <li>没有构建步骤限制，只能使用 H5 和 ES5，不能使用预处理器（babel）</li>
 </ul>
-<h2 id="Vue-单文件组件"><a href="#Vue-单文件组件" class="headerlink" title="Vue 单文件组件"></a>Vue 单文件组件</h2><h3 id="组成结构"><a href="#组成结构" class="headerlink" title="组成结构"></a>组成结构</h3><ul>
+<h2 id="Vue-单文件组件-1"><a href="#Vue-单文件组件-1" class="headerlink" title="Vue 单文件组件"></a>Vue 单文件组件</h2><h3 id="组成结构"><a href="#组成结构" class="headerlink" title="组成结构"></a>组成结构</h3><ul>
 <li>template 组件的模版区域</li>
 <li>script 组件的业务逻辑区</li>
 <li>style 样式区域<ul>
@@ -470,6 +477,7 @@
 </li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  <span class="comment">// 这是一个箭头函数 别晕了</span></span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -565,8 +573,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/03/19/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/webpack/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">前端工程化/webpack</div>
+    <a href="/2020/03/18/Vue05%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue05前端路由</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -593,7 +601,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PREVIEW"><span class="toc-number">1.</span> <span class="toc-text">PREVIEW</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ES6模块化"><span class="toc-number">2.</span> <span class="toc-text">ES6模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#模块化"><span class="toc-number">2.1.</span> <span class="toc-text">模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主流的模块化规范"><span class="toc-number">2.1.1.</span> <span class="toc-text">主流的模块化规范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#babel"><span class="toc-number">2.2.</span> <span class="toc-text">babel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6模块化规范"><span class="toc-number">2.3.</span> <span class="toc-text">ES6模块化规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#默认导出-amp-默认导入"><span class="toc-number">2.3.1.</span> <span class="toc-text">默认导出&amp;默认导入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按需导入-amp-按需导出"><span class="toc-number">2.3.2.</span> <span class="toc-text">按需导入&amp;按需导出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直接导入并执行模块中的代码"><span class="toc-number">2.3.3.</span> <span class="toc-text">直接导入并执行模块中的代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Webpack"><span class="toc-number">3.</span> <span class="toc-text">Webpack</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-概述"><span class="toc-number">3.1.</span> <span class="toc-text">webpack 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-的基本使用"><span class="toc-number">3.2.</span> <span class="toc-text">webpack 的基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在项目中安装和配置-webpack"><span class="toc-number">3.2.1.</span> <span class="toc-text">在项目中安装和配置 webpack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置打包的入口和出口"><span class="toc-number">3.2.2.</span> <span class="toc-text">配置打包的入口和出口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-webpack-自动打包"><span class="toc-number">3.2.3.</span> <span class="toc-text">配置 webpack 自动打包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-html-webpack-plugin-生成预览页面"><span class="toc-number">3.2.4.</span> <span class="toc-text">配置 html-webpack-plugin 生成预览页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动打开浏览器页面"><span class="toc-number">3.2.5.</span> <span class="toc-text">自动打开浏览器页面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-中的加载器"><span class="toc-number">3.3.</span> <span class="toc-text">webpack 中的加载器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打包处理-css-文件"><span class="toc-number">3.3.1.</span> <span class="toc-text">打包处理 css 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包处理-less-文件"><span class="toc-number">3.3.2.</span> <span class="toc-text">打包处理 less 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包处理-scss-文件"><span class="toc-number">3.3.3.</span> <span class="toc-text">打包处理 scss 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-postCSS-自动添加-CSS-的兼容前缀"><span class="toc-number">3.3.4.</span> <span class="toc-text">配置 postCSS 自动添加 CSS 的兼容前缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包样式表中的图片和字体文件"><span class="toc-number">3.3.5.</span> <span class="toc-text">打包样式表中的图片和字体文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包处理-js-的高级语法"><span class="toc-number">3.3.6.</span> <span class="toc-text">打包处理 js 的高级语法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-打包发布"><span class="toc-number">3.4.</span> <span class="toc-text">webpack 打包发布</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue单文件组件"><span class="toc-number">4.</span> <span class="toc-text">Vue单文件组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#传统组件的问题"><span class="toc-number">4.1.</span> <span class="toc-text">传统组件的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-单文件组件"><span class="toc-number">4.2.</span> <span class="toc-text">Vue 单文件组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#组成结构"><span class="toc-number">4.2.1.</span> <span class="toc-text">组成结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-webpack-中配置-Vue-组件加载器"><span class="toc-number">4.2.2.</span> <span class="toc-text">在 webpack 中配置 Vue 组件加载器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-webpack-项目中使用-vue"><span class="toc-number">4.2.3.</span> <span class="toc-text">在 webpack 项目中使用 vue</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PREVIEW"><span class="toc-number">1.</span> <span class="toc-text">PREVIEW</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ES6-模块化"><span class="toc-number">2.</span> <span class="toc-text">ES6 模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#模块化"><span class="toc-number">2.1.</span> <span class="toc-text">模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主流的模块化规范"><span class="toc-number">2.1.1.</span> <span class="toc-text">主流的模块化规范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#babel"><span class="toc-number">2.2.</span> <span class="toc-text">babel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6-模块化规范"><span class="toc-number">2.3.</span> <span class="toc-text">ES6 模块化规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#默认导出-amp-默认导入"><span class="toc-number">2.3.1.</span> <span class="toc-text">默认导出&amp;默认导入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按需导入-amp-按需导出"><span class="toc-number">2.3.2.</span> <span class="toc-text">按需导入&amp;按需导出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直接导入并执行模块中的代码"><span class="toc-number">2.3.3.</span> <span class="toc-text">直接导入并执行模块中的代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Webpack"><span class="toc-number">3.</span> <span class="toc-text">Webpack</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-概述"><span class="toc-number">3.1.</span> <span class="toc-text">webpack 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-的基本使用"><span class="toc-number">3.2.</span> <span class="toc-text">webpack 的基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在项目中安装和配置-webpack"><span class="toc-number">3.2.1.</span> <span class="toc-text">在项目中安装和配置 webpack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置打包的入口和出口"><span class="toc-number">3.2.2.</span> <span class="toc-text">配置打包的入口和出口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-webpack-自动打包"><span class="toc-number">3.2.3.</span> <span class="toc-text">配置 webpack 自动打包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-html-webpack-plugin-生成预览页面"><span class="toc-number">3.2.4.</span> <span class="toc-text">配置 html-webpack-plugin 生成预览页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动打开浏览器页面"><span class="toc-number">3.2.5.</span> <span class="toc-text">自动打开浏览器页面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-中的加载器"><span class="toc-number">3.3.</span> <span class="toc-text">webpack 中的加载器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打包处理-css-文件"><span class="toc-number">3.3.1.</span> <span class="toc-text">打包处理 css 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包处理-less-文件"><span class="toc-number">3.3.2.</span> <span class="toc-text">打包处理 less 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包处理-scss-文件"><span class="toc-number">3.3.3.</span> <span class="toc-text">打包处理 scss 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-postCSS-自动添加-CSS-的兼容前缀"><span class="toc-number">3.3.4.</span> <span class="toc-text">配置 postCSS 自动添加 CSS 的兼容前缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包样式表中的图片和字体文件"><span class="toc-number">3.3.5.</span> <span class="toc-text">打包样式表中的图片和字体文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包处理-js-的高级语法"><span class="toc-number">3.3.6.</span> <span class="toc-text">打包处理 js 的高级语法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-打包发布"><span class="toc-number">3.4.</span> <span class="toc-text">webpack 打包发布</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-单文件组件"><span class="toc-number">4.</span> <span class="toc-text">Vue 单文件组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#传统组件的问题"><span class="toc-number">4.1.</span> <span class="toc-text">传统组件的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-单文件组件-1"><span class="toc-number">4.2.</span> <span class="toc-text">Vue 单文件组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#组成结构"><span class="toc-number">4.2.1.</span> <span class="toc-text">组成结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-webpack-中配置-Vue-组件加载器"><span class="toc-number">4.2.2.</span> <span class="toc-text">在 webpack 中配置 Vue 组件加载器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-webpack-项目中使用-vue"><span class="toc-number">4.2.3.</span> <span class="toc-text">在 webpack 项目中使用 vue</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
